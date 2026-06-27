@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最新比赛 - 灵息杯 AMO</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #fff;
+            color: #222;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 20px 30px;
+        }
+        
+        h1 {
+            font-size: 1.8em;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 0.9em;
+            letter-spacing: 0.1em;
+        }
+        
+        .info {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px 30px;
+            text-align: center;
+            color: #555;
+        }
+        
+        .info p {
+            margin-bottom: 8px;
+        }
+        
+        .info .en {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px;
+            flex: 1;
+        }
+        
+        .problem {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .problem:last-child {
+            border-bottom: none;
+        }
+        
+        .problem-header {
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: #333;
+        }
+        
+        .problem-text {
+            margin-bottom: 16px;
+            color: #444;
+        }
+        
+        .problem-text p {
+            margin-bottom: 12px;
+        }
+        
+        .problem-text .en {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 8px;
+        }
+        
+        .scoring {
+            background: #f9f9f9;
+            padding: 12px 16px;
+            margin-top: 12px;
+            border-left: 3px solid #666;
+            font-size: 0.9em;
+            color: #555;
+        }
+        
+        .scoring .en {
+            color: #888;
+            font-size: 0.9em;
+        }
+        
+        .back {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .back a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        
+        .back a:hover {
+            color: #222;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>最新比赛</h1>
+        <p class="subtitle">LATEST CONTEST</p>
+    </header>
+
+    <div class="info">
+        <p>灵息杯第一次小测</p>
+        <p class="en">The First Aether Mathematics Open Quiz</p>
+        <p style="margin-top: 12px;">时间：2026年6月27日 — 7月7日24:00</p>
+        <p class="en">Period: June 27, 2026 — 24:00, July 7, 2026</p>
+        <p style="margin-top: 8px;">方式：公众号后台私信答案，或发送邮件至 3955625467@qq.com</p>
+        <p class="en">Submission: Private message via WeChat official account, or email to 3955625467@qq.com</p>
+        <p style="margin-top: 8px;">邮件标题请注明【灵息杯】</p>
+        <p class="en">Please include [AMO] in the email subject line</p>
+        <p style="margin-top: 8px;">规则：第1-4题每题10分，第5题每问15分，共70分</p>
+        <p class="en">Scoring: Problems 1-4: 10 points each. Problem 5: 15 points per sub-problem. Total: 70 points</p>
+    </div>
+
+    <div class="content">
+
+        <div class="problem">
+            <div class="problem-header">第1题</div>
+            <div class="problem-text">
+                <p>求所有正整数 $n$，使得 $n^2 + 3n + 2$ 为完全平方数。</p>
+                <p class="en">Find all positive integers $n$ such that $n^2 + 3n + 2$ is a perfect square.</p>
+            </div>
+        </div>
+
+        <div class="problem">
+            <div class="problem-header">第2题</div>
+            <div class="problem-text">
+                <p>从集合 $\{1, 2, 3, \ldots, 100\}$ 中选取两个不同的元素，使其和能被 $3$ 整除。求满足条件的选取方式总数。</p>
+                <p class="en">From the set $\{1, 2, 3, \ldots, 100\}$, select two distinct elements such that their sum is divisible by $3$. Find the total number of valid selections.</p>
+            </div>
+        </div>
+
+        <div class="problem">
+            <div class="problem-header">第3题</div>
+            <div class="problem-text">
+                <p>设 $ABCD$ 为边长为 $1$ 的正方形，$PQRS$ 为其内接正方形，且顶点 $P$、$Q$、$R$、$S$ 分别位于边 $AB$、$BC$、$CD$、$DA$ 上。记 $\theta$ 为直线 $PQ$ 与直线 $AB$ 所成的锐角，求正方形 $PQRS$ 的面积。</p>
+                <p class="en">Let $ABCD$ be a square of side length $1$, and let $PQRS$ be an inscribed square with vertices $P$, $Q$, $R$, $S$ lying on sides $AB$, $BC$, $CD$, $DA$ respectively. Let $\theta$ be the acute angle between line $PQ$ and line $AB$. Find the area of square $PQRS$.</p>
+            </div>
+        </div>
+
+        <div class="problem">
+            <div class="problem-header">第4题</div>
+            <div class="problem-text">
+                <p>设 $\Gamma_1$、$\Gamma_2$ 为两个半径均为 $1$ 的圆，圆心分别为 $O_1$、$O_2$，两圆相交于点 $A$。已知 $\angle O_1AO_2 = \theta$（$0^\circ < \theta < 180^\circ$），求线段 $O_1O_2$ 的长度。</p>
+                <p class="en">Let $\Gamma_1$ and $\Gamma_2$ be two circles of radius $1$ with centers $O_1$ and $O_2$ respectively, intersecting at point $A$. Given $\angle O_1AO_2 = \theta$ ($0^\circ < \theta < 180^\circ$), find the length of segment $O_1O_2$.</p>
+            </div>
+        </div>
+
+        <div class="problem">
+            <div class="problem-header">第5题</div>
+            <div class="problem-text">
+                <p>设 $n$ 为正整数。</p>
+                <p class="en">Let $n$ be a positive integer.</p>
+                <p style="margin-top: 12px;">(a) 记 $E_n = \{2, 4, 6, \ldots, 2n\}$。令 $S_E = \sum_{k \in E_n} k$，$P_E = \prod_{k \in E_n} k$。求 $\gcd(S_E, P_E)$ 的最大值，或证明其可以任意大。</p>
+                <p class="en">(a) Let $E_n = \{2, 4, 6, \ldots, 2n\}$. Define $S_E = \sum_{k \in E_n} k$ and $P_E = \prod_{k \in E_n} k$. Find the maximum value of $\gcd(S_E, P_E)$, or prove that it can be arbitrarily large.</p>
+                <p style="margin-top: 12px;">(b) 记 $O_n = \{1, 3, 5, \ldots, 2n-1\}$。令 $S_O = \sum_{k \in O_n} k$，$P_O = \prod_{k \in O_n} k$。求 $\gcd(S_O, P_O)$ 的最大值，或证明其可以任意大。</p>
+                <p class="en">(b) Let $O_n = \{1, 3, 5, \ldots, 2n-1\}$. Define $S_O = \sum_{k \in O_n} k$ and $P_O = \prod_{k \in O_n} k$. Find the maximum value of $\gcd(S_O, P_O)$, or prove that it can be arbitrarily large.</p>
+                <div class="scoring">
+                    <p>评分标准：每问15分，其中10分看正确性与连贯性，5分看解法的优越性。</p>
+                    <p class="en">Scoring: 15 points per sub-problem. 10 points for correctness and coherence, 5 points for elegance of the solution.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="back">
+        <a href="index.html">← 返回首页 Back to Home</a>
+    </div>
+
+    <footer>
+        <p>灵息杯 AMO</p>
+    </footer>
+
+</body>
+</html>
