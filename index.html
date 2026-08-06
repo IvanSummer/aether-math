@@ -3,115 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>灵息杯 AMO</title>
+    <title>AMO</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: #fff;
-            color: #222;
-            line-height: 1.6;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-        }
-        
-        header {
-            text-align: center;
-            padding: 80px 20px 40px;
-        }
-        
-        h1 {
-            font-size: 2.2em;
-            font-weight: 400;
-            letter-spacing: 0.05em;
-            margin-bottom: 8px;
-        }
-        
-        .subtitle {
-            color: #666;
-            font-size: 0.95em;
-            letter-spacing: 0.1em;
-        }
-        
-        .intro {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px 30px 40px;
-            text-align: center;
-            color: #444;
-            font-size: 0.95em;
-        }
-        
-        .intro p {
-            margin-bottom: 12px;
-        }
-        
-        .intro .en {
-            color: #666;
-            font-size: 0.9em;
-        }
-        
-        nav {
-            display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 12px;
-            padding: 20px;
-            flex-wrap: wrap;
-        }
-        
-        nav a {
-            display: inline-block;
-            padding: 10px 24px;
-            border: 1px solid #ccc;
+            background-color: #fafafa;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
             color: #333;
-            text-decoration: none;
-            font-size: 0.9em;
-            transition: all 0.2s;
         }
-        
-        nav a:hover {
-            background: #222;
-            color: #fff;
-            border-color: #222;
+
+        #loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            animation: fadeIn 0.4s ease;
         }
-        
-        footer {
-            margin-top: auto;
+
+        .spinner {
+            width: 36px;
+            height: 36px;
+            border: 3px solid #e0e0e0;
+            border-top-color: #333;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        .loading-text {
+            font-size: 14px;
+            color: #666;
+        }
+
+        #selector {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+            animation: fadeIn 0.4s ease;
             text-align: center;
-            padding: 40px 20px;
+            padding: 20px;
+        }
+
+        #selector h1 {
+            font-size: 20px;
+            font-weight: 400;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        button {
+            padding: 12px 32px;
+            font-size: 15px;
+            border: 1px solid #333;
+            border-radius: 6px;
+            cursor: pointer;
+            background-color: #fff;
+            color: #333;
+            transition: all 0.2s ease;
+            font-family: inherit;
+            min-width: 140px;
+        }
+
+        button:hover {
+            background-color: #333;
+            color: #fff;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .hint {
+            font-size: 12px;
             color: #999;
-            font-size: 0.8em;
+            margin-top: 8px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>灵息杯</h1>
-        <p class="subtitle">AETHER MATHEMATICS OPEN</p>
-    </header>
+    <div id="loading">
+        <div class="spinner"></div>
+        <div class="loading-text">正在检测您的地区...</div>
+    </div>
 
-    <section class="intro">
-        <p>灵息杯数学竞赛，创办于2026年，由学生团体自主创办。目前考核的范围仅在中国一般初中所教授的内容中。总部设于中国桂林，仅在此开放针对中小学生的线下赛事，同时对全球人类开放线上赛事。</p>
-        <p class="en">The Aether Mathematics Open (AMO), established in 2026, is a mathematics competition founded by a student organization. The scope of assessment is currently limited to the curriculum of ordinary junior secondary schools in China. Headquartered in Guilin, China, the competition offers offline events exclusively for primary and secondary school students in this locality, while online events are open to all participants worldwide.</p>
-    </section>
+    <div id="selector">
+        <h1>自动检测失败，请手动选择<br>Auto-detection failed, please select</h1>
+        <div class="button-group">
+            <button onclick="location.href='introduction_zh.pdf'">阅读中文</button>
+            <button onclick="location.href='introduction_en.pdf'">Read English</button>
+        </div>
+        <div class="hint">您也可以在 PDF 内切换语言 / You may also switch language inside the PDF</div>
+    </div>
 
-    <nav>
-        <a href="quiz1.html">最新比赛 Latest</a>
-        <a href="archive.html">历届题目与解答 Archive</a>
-        <a href="about.html">比赛介绍 About</a>
-        <a href="contact.html">联系组委会 Contact</a>
-    </nav>
+    <script>
+        async function detectAndRedirect() {
+            try {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 4000);
 
-    <footer>
-        <p>灵息杯 AMO</p>
-    </footer>
+                const response = await fetch('https://ipapi.co/json/', {
+                    signal: controller.signal,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                clearTimeout(timeoutId);
+
+                if (!response.ok) throw new Error('Network response was not ok');
+
+                const data = await response.json();
+                const country = data.country;
+
+                if (country === 'CN') {
+                    window.location.replace('introduction_zh.pdf');
+                } else {
+                    window.location.replace('introduction_en.pdf');
+                }
+            } catch (err) {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('selector').style.display = 'flex';
+            }
+        }
+
+        detectAndRedirect();
+    </script>
 
 </body>
 </html>
