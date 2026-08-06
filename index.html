@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMO</title>
+    <title>Redirecting...</title>
     <style>
         * {
             margin: 0;
@@ -22,55 +22,46 @@
             color: #333;
         }
 
-        #loading {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 16px;
-            animation: fadeIn 0.4s ease;
+        .container {
+            text-align: center;
+            padding: 20px;
+            max-width: 420px;
         }
 
-        .spinner {
-            width: 36px;
-            height: 36px;
-            border: 3px solid #e0e0e0;
+        .status-icon {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #e5e5e5;
             border-top-color: #333;
             border-radius: 50%;
             animation: spin 0.8s linear infinite;
+            margin: 0 auto 24px;
         }
 
-        .loading-text {
-            font-size: 14px;
-            color: #666;
-        }
-
-        #selector {
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            gap: 32px;
-            animation: fadeIn 0.4s ease;
-            text-align: center;
-            padding: 20px;
-        }
-
-        #selector h1 {
-            font-size: 20px;
+        h2 {
+            font-size: 18px;
             font-weight: 400;
-            color: #333;
-            line-height: 1.6;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        p.sub {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 32px;
         }
 
         .button-group {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
+            display: none;
+            gap: 12px;
             justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeIn 0.3s ease;
         }
 
-        button {
-            padding: 12px 32px;
-            font-size: 15px;
+        button, .link-btn {
+            padding: 10px 28px;
+            font-size: 14px;
             border: 1px solid #333;
             border-radius: 6px;
             cursor: pointer;
@@ -78,24 +69,26 @@
             color: #333;
             transition: all 0.2s ease;
             font-family: inherit;
-            min-width: 140px;
+            text-decoration: none;
+            display: inline-block;
         }
 
-        button:hover {
+        button:hover, .link-btn:hover {
             background-color: #333;
             color: #fff;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
         }
 
-        button:active {
-            transform: translateY(0);
+        .manual-trigger {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #888;
+            cursor: pointer;
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
 
-        .hint {
-            font-size: 12px;
-            color: #999;
-            margin-top: 8px;
+        .manual-trigger:hover {
+            color: #333;
         }
 
         @keyframes spin {
@@ -103,57 +96,65 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
+            from { opacity: 0; transform: translateY(6px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-    <div id="loading">
-        <div class="spinner"></div>
-        <div class="loading-text">正在检测您的地区...</div>
-    </div>
-
-    <div id="selector">
-        <h1>自动检测失败，请手动选择<br>Auto-detection failed, please select</h1>
-        <div class="button-group">
-            <button onclick="location.href='introduction_zh.pdf'">阅读中文</button>
-            <button onclick="location.href='introduction_en.pdf'">Read English</button>
+    <div class="container">
+        <div id="auto-box">
+            <div class="status-icon"></div>
+            <h2 id="status-text">正在检测语言偏好...</h2>
+            <p class="sub" id="sub-text">根据您的浏览器设置自动跳转</p>
+            <div class="manual-trigger" onclick="showManual()">手动选择语言 / Manual selection</div>
         </div>
-        <div class="hint">您也可以在 PDF 内切换语言 / You may also switch language inside the PDF</div>
+
+        <div class="button-group" id="manual-box">
+            <a class="link-btn" href="introduction_zh.pdf">阅读中文</a>
+            <a class="link-btn" href="introduction_en.pdf">Read English</a>
+        </div>
     </div>
 
     <script>
-        async function detectAndRedirect() {
-            try {
-                const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 4000);
+        function detect() {
+            // 1. 浏览器语言
+            const lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+            // 2. 系统时区
+            const tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || '').toLowerCase();
 
-                const response = await fetch('https://ipapi.co/json/', {
-                    signal: controller.signal,
-                    headers: { 'Accept': 'application/json' }
-                });
+            // 判断是否为中文环境
+            const isChinese = lang.startsWith('zh') || 
+                              ['asia/shanghai', 'asia/chongqing', 'asia/urumqi', 
+                               'asia/hong_kong', 'asia/taipei', 'asia/macau'].includes(tz);
 
-                clearTimeout(timeoutId);
+            const statusText = document.getElementById('status-text');
+            const subText = document.getElementById('sub-text');
 
-                if (!response.ok) throw new Error('Network response was not ok');
-
-                const data = await response.json();
-                const country = data.country;
-
-                if (country === 'CN') {
-                    window.location.replace('introduction_zh.pdf');
-                } else {
-                    window.location.replace('introduction_en.pdf');
-                }
-            } catch (err) {
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('selector').style.display = 'flex';
+            if (isChinese) {
+                statusText.textContent = '检测到中文环境，正在跳转...';
+                subText.textContent = '若未自动跳转，请点击下方手动选择';
+                setTimeout(() => {
+                    location.replace('introduction_zh.pdf');
+                }, 1000);
+            } else {
+                statusText.textContent = 'English environment detected. Redirecting...';
+                subText.textContent = 'If not redirected, please select manually below';
+                setTimeout(() => {
+                    location.replace('introduction_en.pdf');
+                }, 1000);
             }
         }
 
-        detectAndRedirect();
+        function showManual() {
+            document.getElementById('auto-box').style.display = 'none';
+            const manual = document.getElementById('manual-box');
+            manual.style.display = 'flex';
+        }
+
+        // 页面加载后立即检测
+        detect();
     </script>
 
 </body>
