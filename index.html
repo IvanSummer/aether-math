@@ -112,8 +112,8 @@
         </div>
 
         <div class="button-group" id="manual-box">
-            <a class="link-btn" href="introduction_zh.pdf">阅读中文</a>
-            <a class="link-btn" href="introduction_en.pdf">Read English</a>
+            <a class="link-btn" href="introduction_zh.html">阅读中文</a>
+            <a class="link-btn" href="introduction_en.html">Read English</a>
         </div>
     </div>
 
@@ -136,13 +136,13 @@
                 statusText.textContent = '检测到中文环境，正在跳转...';
                 subText.textContent = '若未自动跳转，请点击下方手动选择';
                 setTimeout(() => {
-                    location.replace('introduction_zh.pdf');
+                    location.replace('introduction_zh.html');
                 }, 1000);
             } else {
                 statusText.textContent = 'English environment detected. Redirecting...';
                 subText.textContent = 'If not redirected, please select manually below';
                 setTimeout(() => {
-                    location.replace('introduction_en.pdf');
+                    location.replace('introduction_en.html');
                 }, 1000);
             }
         }
