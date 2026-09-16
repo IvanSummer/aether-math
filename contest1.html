@@ -88,17 +88,17 @@
     <div class="content">
 
         <div class="problem-text" style="margin-bottom: 30px;">
-            <p><strong>约定：</strong>全文 $\mathbb{N}=\{1,2,3,\ldots\}$（即 $0\notin\mathbb{N}$），$\mathbb{Z}^{*}=\mathbb{Z}\setminus\{0\}$；对子域 $K\subseteq\mathbb{C}$ 与集合 $S\subseteq\mathbb{C}$，$K(S)$ 表示包含 $K$ 与 $S$ 的最小子域；“在 $K$ 上不可约”只对非常数多项式而言。</p>
-            <p class="en"><strong>Conventions.</strong> Throughout, $\mathbb{N}=\{1,2,3,\ldots\}$ (so $0\notin\mathbb{N}$) and $\mathbb{Z}^{*}=\mathbb{Z}\setminus\{0\}$; for a subfield $K\subseteq\mathbb{C}$ and a set $S\subseteq\mathbb{C}$, $K(S)$ denotes the smallest subfield of $\mathbb{C}$ containing $K$ and $S$; a polynomial is called irreducible over $K$ only if it is non-constant.</p>
+            <p><strong>约定：</strong>全文 $\mathbb{N}=\{0,1,2,3,\ldots\}$——按中国教材的习惯，自然数<strong>包含 $0$</strong>，即 $0\in\mathbb{N}$——$\mathbb{Z}^{*}=\mathbb{Z}\setminus\{0\}$；对子域 $K\subseteq\mathbb{C}$ 与集合 $S\subseteq\mathbb{C}$，$K(S)$ 表示包含 $K$ 与 $S$ 的最小子域；“在 $K$ 上不可约”只对非常数多项式而言。</p>
+            <p class="en"><strong>Conventions.</strong> Throughout, $\mathbb{N}=\{0,1,2,3,\ldots\}$ --- following the convention used in Chinese textbooks, the natural numbers <em>include</em> $0$, so $0\in\mathbb{N}$ --- and $\mathbb{Z}^{*}=\mathbb{Z}\setminus\{0\}$; for a subfield $K\subseteq\mathbb{C}$ and a set $S\subseteq\mathbb{C}$, $K(S)$ denotes the smallest subfield of $\mathbb{C}$ containing $K$ and $S$; a polynomial is called irreducible over $K$ only if it is non-constant.</p>
         </div>
 
         <div class="problem">
             <div class="problem-header">第1题（20分 / 20 points）</div>
             <div class="problem-text">
-                <p>证明：对任意 $n,m\in\mathbb{N}\setminus\{1\}$，存在两两不同的 $x,y,z\in\mathbb{N}$，使得</p>
+                <p>证明：对任意 $n,m\in\mathbb{N}\setminus\{0,1\}$（即 $n,m\ge 2$），存在两两不同的 $x,y,z\in\mathbb{N}$，使得</p>
                 <p>$$x^n+y^n \equiv z^n \pmod{m}\qquad\text{且 / and}\qquad z^n \not\equiv 0 \pmod{m}$$</p>
-                <p>（注：$0\notin\mathbb{N}$，$x,y,z$ 两两不同。）</p>
-                <p class="en">Prove that for all $n,m\in\mathbb{N}\setminus\{1\}$ there exist pairwise distinct $x,y,z\in\mathbb{N}$ with $x^n+y^n\equiv z^n\pmod m$ and $z^n\not\equiv0\pmod m$. (Recall $0\notin\mathbb{N}$.)</p>
+                <p>（注：$0\in\mathbb{N}$，故 $x,y,z$ 可以取 $0$；三者仍须两两不同。）</p>
+                <p class="en">Prove that for all $n,m\in\mathbb{N}\setminus\{0,1\}$ (i.e. $n,m\ge2$) there exist pairwise distinct $x,y,z\in\mathbb{N}$ with $x^n+y^n\equiv z^n\pmod m$ and $z^n\not\equiv0\pmod m$. (Recall $0\in\mathbb{N}$, so $x,y,z$ are allowed to be $0$.)</p>
             </div>
         </div>
 
@@ -123,8 +123,8 @@
                     <li>（6分 / 6 points）是否成立：（$f(x)$ 在 $K_1$ 上不可约）$\implies$（$f(x)$ 在 $\mathbb{R}$ 上不可约）？回答并证明。
                         <span class="en">Is it true that ($f$ irreducible over $K_1$) $\implies$ ($f$ irreducible over $\mathbb{R}$)? Answer the question and prove your answer.</span>
                     </li>
-                    <li>（6分 / 6 points）是否成立：$(\exists M \in \mathbb{N})(\forall f(x) \in \mathbb{Z}[x])[(f(x)$ 在 $K_M$ 上不可约$) \implies (f(x)$ 在 $\mathbb{R}$ 上不可约$)]$？请就次数 $n=\deg f$ 指出该蕴含式对哪些 $n$ 成立、对哪些 $n$ 不成立，并证明。
-                        <span class="en">Is it true that $(\exists M\in\mathbb{N})(\forall f\in\mathbb{Z}[x])[(f\ \text{irreducible over}\ K_M)\implies(f\ \text{irreducible over}\ \mathbb{R})]$? Determine, in terms of the degree $n=\deg f$, for which $n$ it holds and for which it fails, and prove your answer.</span>
+                    <li>（6分 / 6 points）是否成立：$(\exists M \in \mathbb{N})(\forall f(x) \in \mathbb{Z}[x])[(f(x)$ 在 $K_M$ 上不可约$) \implies (f(x)$ 在 $\mathbb{R}$ 上不可约$)]$？（注意 $0\in\mathbb{N}$，故允许 $M=0$，此时 $K_M=K_0=\mathbb{Q}$。）请就次数 $n=\deg f$ 指出该蕴含式对哪些 $n$ 成立、对哪些 $n$ 不成立，并证明。
+                        <span class="en">Is it true that $(\exists M\in\mathbb{N})(\forall f\in\mathbb{Z}[x])[(f\ \text{irreducible over}\ K_M)\implies(f\ \text{irreducible over}\ \mathbb{R})]$? (Recall $0\in\mathbb{N}$, so $M=0$ is allowed and then $K_M=K_0=\mathbb{Q}$.) Determine, in terms of the degree $n=\deg f$, for which $n$ it holds and for which it fails, and prove your answer.</span>
                     </li>
                     <li>（6分 / 6 points）设 $$K^*_0=\mathbb{Q},\qquad G^*_i=\{p\in \mathbb{R}\mid p^o=q^r,\ q\in K^*_i,\ r,o\in \mathbb{Z}^*\},\qquad K^*_j=K^*_{j-1}(G^*_{j-1})$$ 求一个 $f(x) \in \mathbb{Z}[x]$，使得它对一切 $M \in \mathbb{N}$ 都在 $K^*_M$ 上不可约，但在 $\mathbb{R}$ 上可约，并给出它在 $\mathbb{R}$ 上的分解。
                         <span class="en">Let $K^*_0=\mathbb{Q}$, $G^*_i=\{p\in\mathbb{R}\mid p^o=q^r,\ q\in K^*_i,\ r,o\in\mathbb{Z}^*\}$, $K^*_j=K^*_{j-1}(G^*_{j-1})$. Find $f\in\mathbb{Z}[x]$ that is irreducible over $K^*_M$ for every $M\in\mathbb{N}$ but reducible over $\mathbb{R}$, and factor it over $\mathbb{R}$.</span>
@@ -164,6 +164,23 @@
                         <span class="en">Let $m\ge5$ and $B_m=\{a+bi\in\mathbb{Z}[i]\mid 0\le a,b<m\}$ be the $m\times m$ board. Prove that for every $z\in B_m$ there exist $n\ge1$ and $k_1,\ldots,k_n\in K_2$ such that $\sum_{i=1}^n k_i=z$ and every partial sum $\sum_{i=1}^j k_i$ lies in $B_m$ ($1\le j\le n$).</span>
                     </li>
                 </ol>
+            </div>
+        </div>
+
+        <div class="problem">
+            <div class="problem-header">第5题（20分 / 20 points）</div>
+            <div class="problem-text">
+                <p>设 $n\ge 1$，$K=(a_1,a_2,\ldots ,a_n)$ 是一个由 $0$ 和 $1$ 组成的有限序列。按下列规则得到同样长度的新序列 $T(K)=(b_1,\ldots ,b_n)$。</p>
+                <p><strong>第一步（指令）：</strong>每个位置 $i$ 至多发出<strong>一条</strong>指令。</p>
+                <p>
+                    $\bullet$ 若 $a_i=1$，令 $p_i=\#\{j<i\mid a_j=1\}$（它前面 $1$ 的个数）。若 $p_i\ge 2$，则位置 $i$ 发出指令：“把第 $i+p_i-1$ 位改成 $1$”。<br>
+                    $\bullet$ 若 $a_i=0$，令 $s_i=\#\{j>i\mid a_j=0\}$（它后面 $0$ 的个数）。若 $s_i\ge 2$，则位置 $i$ 发出指令：“把第 $i-s_i+1$ 位改成 $0$”。
+                </p>
+                <p>其余情形都不发出指令：数出的个数为 $0$ 或 $1$ 时不发（从自己数起，第一个就是自己），所指的位置不在 $\{1,\ldots ,n\}$ 内时也不发（不循环、不溢出）。</p>
+                <p><strong>第二步（同时执行）：</strong>所有指令都由原序列 $K$ 算出，然后同时执行。若位置 $t$ 只收到“改成 $1$”的指令，则 $b_t=1$；只收到“改成 $0$”的指令，则 $b_t=0$；同时收到两种指令，或者没有收到任何指令，则 $b_t=a_t$。</p>
+                <p><strong>问题：</strong>证明 $T(K)$ 必有<strong>不动点</strong>，即存在 $t\in\{1,\ldots ,n\}$ 使得 $b_t=a_t$。</p>
+                <p>等价地说：$T(K)$ 永远不会是把 $K$ 的每一位都取反所得的序列 $(1-a_1,\ldots ,1-a_n)$。</p>
+                <p class="en">Let $n\ge1$ and let $K=(a_1,\ldots ,a_n)$ be a finite sequence with $a_i\in\{0,1\}$. Define $T(K)=(b_1,\ldots ,b_n)$ as follows. <em>Step 1 (instructions):</em> each position $i$ issues at most one instruction. If $a_i=1$, put $p_i=\#\{j<i\mid a_j=1\}$; if $p_i\ge2$, position $i$ issues “put a $1$ into position $i+p_i-1$”. If $a_i=0$, put $s_i=\#\{j>i\mid a_j=0\}$; if $s_i\ge2$, position $i$ issues “put a $0$ into position $i-s_i+1$”. In all other cases no instruction is issued: if the number counted is $0$ or $1$ (counting starts at the position itself), or if the indicated position is outside $\{1,\ldots ,n\}$ (no wrap-around, no overflow). <em>Step 2 (simultaneous execution):</em> all instructions are computed from $K$ and carried out at the same time; if position $t$ receives only “$1$” instructions then $b_t=1$, if only “$0$” instructions then $b_t=0$, and if it receives both kinds or none then $b_t=a_t$. <em>Question:</em> Prove that $T(K)$ always has a fixed point, i.e. some $t$ with $b_t=a_t$. Equivalently, $T(K)$ is never the bitwise complement $(1-a_1,\ldots ,1-a_n)$ of $K$.</p>
             </div>
         </div>
 
