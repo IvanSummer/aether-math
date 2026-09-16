@@ -16,12 +16,13 @@
 
 Welcome to the 1st Aether Mathematics Open!
 The contest will be held from September 1 to December 31, 2026.
-It consists of 10 problems, each worth 10 points, for a total of 100 points. 
+It consists of 5 problems, each worth 20 points, for a total of 100 points. 
 
 \paragraph{Conventions.}
 Throughout this paper,
-$\mathbb{N}=\{1,2,3,\ldots\}$ (so $0\notin\mathbb{N}$) and
-$\mathbb{Z}^{*}=\mathbb{Z}\setminus\{0\}$;
+$\mathbb{N}=\{0,1,2,3,\ldots\}$ --- in accordance with the convention used in
+Chinese textbooks, the natural numbers \emph{include} $0$, so $0\in\mathbb{N}$ ---
+and $\mathbb{Z}^{*}=\mathbb{Z}\setminus\{0\}$;
 for a subfield $K\subseteq\mathbb{C}$ and a set $S\subseteq\mathbb{C}$,
 $K(S)$ denotes the smallest subfield of $\mathbb{C}$ containing $K$ and $S$;
 and a polynomial is called irreducible over $K$ only if it is non-constant and
@@ -30,14 +31,14 @@ is not a product of two non-constant polynomials of $K[x]$.
 \section{Problems}
 \subsection{Problem 1:}
 
-Prove that for all $n,m\in\mathbb{N}\setminus\{1\}$ there exist
-$x,y,z\in\mathbb{N}$ such that
+Prove that for all $n,m\in\mathbb{N}\setminus\{0,1\}$ (that is, $n,m\ge 2$)
+there exist $x,y,z\in\mathbb{N}$ such that
 
 $$x^n+y^n \equiv z^n \pmod{m}
 \qquad\text{and}\qquad
 z^n \not\equiv 0 \pmod{m}$$
 
-*:$(0\notin\mathbb{N},x,y,z$are pairwise distinct).
+(Here $x,y,z$ are required to be pairwise distinct.)
 
 20 points.
 
@@ -82,6 +83,7 @@ Is it true that ($f(x)$ is irreducible over $K_1$) $\implies$ ($f(x)$ is irreduc
 \subsubsection{(3)} 
 
 Is it true that $(\exists M \in \mathbb{N})(\forall f(x) \in \mathbb{Z}[x])[(f(x)$ irreducible over $K_M) \implies (f(x)$ irreducible over $\mathbb{R})]$?
+(Recall $0\in\mathbb{N}$, so $M=0$ is allowed and then $K_M=K_0=\mathbb{Q}$.)
 
 Determine, in terms of the degree $n=\deg f$, for which $n$ such an
 implication can hold and for which it fails, and prove your answer. 
@@ -126,7 +128,7 @@ then $f$ has a root that can be expressed by radicals.
 
 \subsection{Problem 4:}
 
-We know that knights' movements can be express like this:
+The eight moves of an ordinary chess knight can be written as the set
 
 $$K_2=\{\pm1\pm 2i,\pm 2 \pm i\}\in\mathbb{Z}[i]$$
 
@@ -171,6 +173,42 @@ that is, an ordinary knight starting at the corner $0$ can reach every
 square of the board by a path that never leaves the board.
 
 8 points.
+
+\subsection{Problem 5:}
+
+Let $n\ge 1$ and let $K=(a_1,a_2,\ldots ,a_n)$ be a finite sequence with
+$a_i\in\{0,1\}$. From $K$ we produce a new sequence
+$T(K)=(b_1,\ldots ,b_n)$ of the same length as follows.
+
+\paragraph{Step 1: instructions.}
+Each position $i$ issues \emph{at most one} instruction.
+\begin{itemize}
+\item If $a_i=1$, let $p_i=\#\{j<i\mid a_j=1\}$ be the number of $1$'s
+standing before it. If $p_i\ge 2$, position $i$ issues the instruction
+``put a $1$ into position $i+p_i-1$''.
+\item If $a_i=0$, let $s_i=\#\{j>i\mid a_j=0\}$ be the number of $0$'s
+standing after it. If $s_i\ge 2$, position $i$ issues the instruction
+``put a $0$ into position $i-s_i+1$''.
+\end{itemize}
+In every other case no instruction is issued: if the number just counted is
+$0$ or $1$ (counting begins at the position itself, so the first place from
+$a_i$ is $a_i$ itself), or if the indicated position does not lie in
+$\{1,\ldots ,n\}$ --- there is no wrap-around and no overflow.
+
+\paragraph{Step 2: simultaneous execution.}
+All instructions are computed from the original sequence $K$ and are carried
+out at the same time. If position $t$ receives only ``$1$'' instructions, put
+$b_t=1$; if it receives only ``$0$'' instructions, put $b_t=0$; if it
+receives both kinds, or no instruction at all, put $b_t=a_t$.
+
+\paragraph{Question.}
+Prove that $T(K)$ always has a \emph{fixed point}, i.e. there exists an index
+$t\in\{1,\ldots ,n\}$ with $b_t=a_t$.
+
+Equivalently: $T(K)$ is never the sequence $(1-a_1,1-a_2,\ldots ,1-a_n)$
+obtained from $K$ by flipping every term.
+
+20 points.
 
 \section{Acknowledgements and Contest Notes}
 
