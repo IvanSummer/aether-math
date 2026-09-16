@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 1st Aether Mathematics Open - Problems</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #fff;
+            color: #222;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header { text-align: center; padding: 60px 20px 30px; }
+
+        h1 { font-size: 1.8em; font-weight: 400; letter-spacing: 0.05em; margin-bottom: 8px; }
+
+        .subtitle { color: #666; font-size: 0.9em; letter-spacing: 0.1em; }
+
+        .info { max-width: 700px; margin: 0 auto; padding: 20px 30px; text-align: center; color: #555; }
+        .info p { margin-bottom: 8px; }
+
+        .content { max-width: 700px; margin: 0 auto; padding: 30px; flex: 1; }
+
+        .problem { margin-bottom: 40px; padding-bottom: 30px; border-bottom: 1px solid #eee; }
+        .problem:last-child { border-bottom: none; }
+
+        .problem-header { font-weight: 500; margin-bottom: 12px; color: #333; }
+        .problem-text { margin-bottom: 16px; color: #444; }
+        .problem-text p { margin-bottom: 12px; }
+        .problem-text ol { margin: 0 0 12px 20px; }
+        .problem-text ol li { margin-bottom: 10px; }
+        .problem-text ul { margin: 0 0 12px 20px; }
+        .problem-text ul li { margin-bottom: 8px; }
+
+        .notes { background: #f9f9f9; padding: 12px 16px; margin-top: 12px; border-left: 3px #666; border-left-style: solid; font-size: 0.9em; color: #555; }
+        .notes p { margin-bottom: 8px; }
+
+        .back { text-align: center; padding: 20px; }
+        .back a { color: #666; text-decoration: none; font-size: 0.9em; }
+        .back a:hover { color: #222; }
+
+        footer { text-align: center; padding: 40px 20px; color: #999; font-size: 0.8em; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>The 1st Aether Mathematics Open</h1>
+        <p class="subtitle">Problems · 2026</p>
+    </header>
+
+    <div class="info">
+        <p style="margin-top: 12px;">Period: September 1, 2026 &mdash; December 31, 2026</p>
+        <p style="margin-top: 8px;">Submission: send your solutions as a PDF to <strong>aether_math@163.com</strong></p>
+        <p style="margin-top: 8px;">Teamwork is permitted, but a team may submit only one entry. Once you fully understand the problems, do not use computers, calculators, symbolic computation software, large language models, or books.</p>
+        <p style="margin-top: 8px;">Source file: <a href="./contest1_en.tex">contest1_en.tex</a> (LaTeX)</p>
+        <p style="margin-top: 8px;">中文卷：<a href="./contest1_zh.html">灵息杯第一届正赛（中文卷）</a></p>
+    </div>
+
+    <div class="content">
+
+        <div class="problem-text" style="margin-bottom: 30px;">
+            <p><strong>Conventions.</strong> Throughout, $\mathbb{N}=\{0,1,2,3,\ldots\}$ &mdash; following the convention used in Chinese textbooks, the natural numbers <em>include</em> $0$, so $0\in\mathbb{N}$ &mdash; and $\mathbb{Z}^{*}=\mathbb{Z}\setminus\{0\}$; for a subfield $K\subseteq\mathbb{C}$ and a set $S\subseteq\mathbb{C}$, $K(S)$ denotes the smallest subfield of $\mathbb{C}$ containing $K$ and $S$; a polynomial is called irreducible over $K$ only if it is non-constant.</p>
+        </div>
+
+        <div class="problem">
+            <div class="problem-header">Problem 1 (20 points)</div>
+            <div class="problem-text">
+                <p>Prove that for all $n,m\in\mathbb{N}\setminus\{0,1\}$ (i.e. $n,m\ge2$) there exist $x,y,z\in\mathbb{N}$ with</p>
+                <p>$$x^n+y^n \equiv z^n \pmod{m}\qquad\text{and}\qquad z^n \not\equiv 0 \pmod{m}$$</p>
+                <p>($x,y,z$ are required to be pairwise distinct. Recall $0\in\mathbb{N}$, so each of them is allowed to be $0$.)</p>
+            </div>
+        </div>
+
+        <div class="problem">
+            <div class="problem-header">Problem 2 (20 points)</div>
+            <div class="problem-text">
+                <p>Let $$f(x)=\sum_{i=0}^n a_i x^i\ \Big(\sum_{j=1}^n a_j^2\neq 0\Big)\in\mathbb{Z}[x].$$ Prove that for every constant $C\in\mathbb{R}$,</p>
+                <p>$${\lvert\{u \in \mathbb{R}\mid f(u) = C\}\rvert\leq n}$$</p>
+            </div>
+        </div>
+
+        <div class="problem">
+            <div class="problem-header">Problem 3 (20 points)</div>
+            <div class="problem-text">
+                <p>Let $$K_0=\mathbb{Q},\qquad G_i=\{p\in\mathbb{C}\mid p^o=q^r,\ q\in K_i,\ r,o\in\mathbb{Z}^*\},\qquad K_j=K_{j-1}(G_{j-1}),$$ and let $f(x)\in\mathbb{Z}[x]$ be non-constant, $n=\deg f$.</p>
+                <ol>
+                    <li>(2 points) Is it true that ($f$ irreducible over $\mathbb{R}$) $\implies$ ($f$ irreducible over $K_1$)? Answer the question and prove your answer.</li>
+                    <li>(6 points) Is it true that ($f$ irreducible over $K_1$) $\implies$ ($f$ irreducible over $\mathbb{R}$)? Answer the question and prove your answer.</li>
+                    <li>(6 points) Is it true that $(\exists M\in\mathbb{N})(\forall f\in\mathbb{Z}[x])[(f\ \text{irreducible over}\ K_M)\implies(f\ \text{irreducible over}\ \mathbb{R})]$? (Recall $0\in\mathbb{N}$, so $M=0$ is allowed and then $K_M=K_0=\mathbb{Q}$.) Determine, in terms of the degree $n=\deg f$, for which $n$ it holds and for which it fails, and prove your answer.</li>
+                    <li>(6 points) Let $$K^*_0=\mathbb{Q},\qquad G^*_i=\{p\in\mathbb{R}\mid p^o=q^r,\ q\in K^*_i,\ r,o\in\mathbb{Z}^*\},\qquad K^*_j=K^*_{j-1}(G^*_{j-1}).$$ Find $f\in\mathbb{Z}[x]$ that is irreducible over $K^*_M$ for every $M\in\mathbb{N}$ but reducible over $\mathbb{R}$, and factor it over $\mathbb{R}$.</li>
+                </ol>
+                <div class="notes">
+                    <p><strong>Notes</strong></p>
+                    <p>(i) Every polynomial equation of degree $\le4$ is solvable by radicals (quadratic formula, Cardano, Ferrari).</p>
+                    <p>(ii) (Abel&ndash;Ruffini) There is no general formula in radicals for equations of degree $\ge5$; e.g. no root of $x^5-4x+2$ is expressible by radicals. More generally, for every $n\ge5$, $x^n-x-1$ is irreducible over $\mathbb{Q}$ and remains so over every field obtained from $\mathbb{Q}$ by iterated adjunction of radicals.</p>
+                    <p>(iii) (Casus irreducibilis) If an irreducible cubic over $\mathbb{Q}$ has three real roots, then none of its roots can be expressed by real radicals, however deeply nested.</p>
+                    <p>(iv) If $g\in K_j[x]$ has degree $\le4$, then by (i) every root of $g$ lies in some $K_{j'}$ ($j'\ge j$). Hence if $f\in\mathbb{Z}[x]$ has a factor of degree $\le4$ over some $K_j$, then $f$ has a root expressible by radicals.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="problem">
+            <div class="problem-header">Problem 4 (20 points)</div>
+            <div class="problem-text">
+                <p>The eight moves of an ordinary chess knight are</p>
+                <p>$$K_2=\{\pm1\pm 2i,\ \pm 2 \pm i\}\subset\mathbb{Z}[i]$$</p>
+                <p>Define the $a$-knight (strange A-knight) by</p>
+                <p>$$K_a=\{\pm1\pm ai,\ \pm a \pm i\}\subset\mathbb{Z}[i]$$</p>
+                <p>(where $\pm1\pm ai$ stands for all four independent choices of the two signs).</p>
+                <ol>
+                    <li>(6 points) Prove that if $a\equiv1\pmod2$, then $\sum_{i=1}^n k_i\neq 1$ for every $n\ge1$ and all $k_1,\ldots,k_n\in K_a$.<br>$$\sum_{i=1}^n k_i\neq 1$$</li>
+                    <li>(6 points) Prove that if $a\equiv0\pmod2$, then for every $z\in\mathbb{Z}[i]$ there exist $n\ge1$ and $k_1,\ldots,k_n\in K_a$ with $$\sum_{i=1}^n k_i=z$$</li>
+                    <li>(8 points) Let $m\ge5$ be an integer and let $B_m=\{a+bi\in\mathbb{Z}[i]\mid 0\le a,b&lt;m\}$ be the $m\times m$ board. Prove that for every $z\in B_m$ there exist $n\ge1$ and $k_1,\ldots,k_n\in K_2$ such that $$\sum_{i=1}^n k_i=z\qquad\text{and}\qquad \sum_{i=1}^j k_i\in B_m\ \ (1\le j\le n),$$ i.e. an ordinary knight starting at the corner $0$ can reach every square by a path that never leaves the board.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="problem">
+            <div class="problem-header">Problem 5 (20 points)</div>
+            <div class="problem-text">
+                <p>Let $n\ge1$ and let $K=(a_1,\ldots ,a_n)$ be a finite sequence with $a_i\in\{0,1\}$. Define $T(K)=(b_1,\ldots ,b_n)$ as follows.</p>
+                <p><strong>Step 1 (instructions).</strong> Each position $i$ issues <strong>at most one</strong> instruction.</p>
+                <ul>
+                    <li>If $a_i=1$, put $p_i=\#\{j&lt;i\mid a_j=1\}$, the number of $1$'s standing before it. If $p_i\ge2$, position $i$ issues the instruction &ldquo;put a $1$ into position $i+p_i-1$&rdquo;.</li>
+                    <li>If $a_i=0$, put $s_i=\#\{j&gt;i\mid a_j=0\}$, the number of $0$'s standing after it. If $s_i\ge2$, position $i$ issues the instruction &ldquo;put a $0$ into position $i-s_i+1$&rdquo;.</li>
+                </ul>
+                <p>In all other cases no instruction is issued: if the number counted is $0$ or $1$ (counting begins at the position itself, so the first place from $a_i$ is $a_i$ itself), or if the indicated position is outside $\{1,\ldots ,n\}$ (no wrap-around, no overflow).</p>
+                <p><strong>Step 2 (simultaneous execution).</strong> All instructions are computed from $K$ and carried out at the same time. If position $t$ receives only &ldquo;$1$&rdquo; instructions, put $b_t=1$; if only &ldquo;$0$&rdquo; instructions, put $b_t=0$; if it receives both kinds, or no instruction at all, put $b_t=a_t$.</p>
+                <p><strong>Question.</strong> Prove that $T(K)$ always has a <strong>fixed point</strong>: there exists $t\in\{1,\ldots ,n\}$ with $b_t=a_t$.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="back">
+        <a href="index.html">&larr; Back to Home</a>
+    </div>
+
+    <footer>
+        <p>Aether Mathematics Open</p>
+    </footer>
+
+</body>
+</html>
