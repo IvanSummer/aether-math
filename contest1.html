@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第一届正赛 - 灵息杯 AMO</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #fff;
+            color: #222;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header { text-align: center; padding: 60px 20px 30px; }
+
+        h1 { font-size: 1.8em; font-weight: 400; letter-spacing: 0.05em; margin-bottom: 8px; }
+
+        .subtitle { color: #666; font-size: 0.9em; letter-spacing: 0.1em; }
+
+        .info { max-width: 700px; margin: 0 auto; padding: 20px 30px; text-align: center; color: #555; }
+        .info p { margin-bottom: 8px; }
+        .info .en { color: #666; font-size: 0.9em; }
+
+        .content { max-width: 700px; margin: 0 auto; padding: 30px; flex: 1; }
+
+        .problem { margin-bottom: 40px; padding-bottom: 30px; border-bottom: 1px solid #eee; }
+        .problem:last-child { border-bottom: none; }
+
+        .problem-header { font-weight: 500; margin-bottom: 12px; color: #333; }
+        .problem-text { margin-bottom: 16px; color: #444; }
+        .problem-text p { margin-bottom: 12px; }
+        .problem-text .en { color: #666; font-size: 0.9em; margin-top: 8px; }
+        .problem-text ol { margin: 0 0 12px 20px; }
+        .problem-text ol li { margin-bottom: 10px; }
+        .problem-text ol li .en { display: block; }
+
+        .notes { background: #f9f9f9; padding: 12px 16px; margin-top: 12px; border-left: 3px #666; border-left-style: solid; font-size: 0.9em; color: #555; }
+        .notes p { margin-bottom: 8px; }
+        .notes .en { color: #888; font-size: 0.9em; }
+
+        .scoring { background: #f9f9f9; padding: 12px 16px; margin-top: 12px; border-left: 3px #666; border-left-style: solid; font-size: 0.9em; color: #555; }
+        .scoring .en { color: #888; font-size: 0.9em; }
+
+        .back { text-align: center; padding: 20px; }
+        .back a { color: #666; text-decoration: none; font-size: 0.9em; }
+        .back a:hover { color: #222; }
+
+        footer { text-align: center; padding: 40px 20px; color: #999; font-size: 0.8em; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>灵息杯第一届正赛</h1>
+        <p class="subtitle">The 1st Aether Mathematics Open</p>
+    </header>
+
+    <div class="info">
+        <p style="margin-top: 12px;">时间：2026年9月1日 — 12月31日</p>
+        <p class="en">Period: September 1, 2026 — December 31, 2026</p>
+        <p style="margin-top: 8px;">提交：将解答以 PDF 形式发送至 <strong>aether_math@163.com</strong></p>
+        <p class="en">Submission: send your solutions as a PDF to aether_math@163.com</p>
+        <p style="margin-top: 8px;">可组队，但每队只能提交一份；充分理解题目后请勿使用计算机、计算器、符号运算软件、大模型或书籍。</p>
+        <p class="en">Teamwork is permitted, but a team may submit only one entry. Once you fully understand the problems, do not use computers, calculators, symbolic computation software, large language models, or books.</p>
+        <p style="margin-top: 8px;">赛题源文件：<a href="./contest1.tex">contest1.tex</a>（LaTeX）</p>
+        <p class="en">Source file: <a href="./contest1.tex">contest1.tex</a> (LaTeX)</p>
+    </div>
+
+    <div class="content">
+
+        <div class="problem-text" style="margin-bottom: 30px;">
+            <p><strong>约定：</strong>全文 $\mathbb{N}=\{1,2,3,\ldots\}$（即 $0\notin\mathbb{N}$），$\mathbb{Z}^{*}=\mathbb{Z}\setminus\{0\}$；对子域 $K\subseteq\mathbb{C}$ 与集合 $S\subseteq\mathbb{C}$，$K(S)$ 表示包含 $K$ 与 $S$ 的最小子域；“在 $K$ 上不可约”只对非常数多项式而言。</p>
+            <p class="en"><strong>Conventions.</strong> Throughout, $\mathbb{N}=\{1,2,3,\ldots\}$ (so $0\notin\mathbb{N}$) and $\mathbb{Z}^{*}=\mathbb{Z}\setminus\{0\}$; for a subfield $K\subseteq\mathbb{C}$ and a set $S\subseteq\mathbb{C}$, $K(S)$ denotes the smallest subfield of $\mathbb{C}$ containing $K$ and $S$; a polynomial is called irreducible over $K$ only if it is non-constant.</p>
+        </div>
+
+        <div class="problem">
+            <div class="problem-header">第1题（20分 / 20 points）</div>
+            <div class="problem-text">
+                <p>证明：对任意 $n,m\in\mathbb{N}\setminus\{1\}$，存在两两不同的 $x,y,z\in\mathbb{N}$，使得</p>
+                <p>$$x^n+y^n \equiv z^n \pmod{m}\qquad\text{且 / and}\qquad z^n \not\equiv 0 \pmod{m}$$</p>
+                <p>（注：$0\notin\mathbb{N}$，$x,y,z$ 两两不同。）</p>
+                <p class="en">Prove that for all $n,m\in\mathbb{N}\setminus\{1\}$ there exist pairwise distinct $x,y,z\in\mathbb{N}$ with $x^n+y^n\equiv z^n\pmod m$ and $z^n\not\equiv0\pmod m$. (Recall $0\notin\mathbb{N}$.)</p>
+            </div>
+        </div>
+
+        <div class="problem">
+            <div class="problem-header">第2题（20分 / 20 points）</div>
+            <div class="problem-text">
+                <p>设 $$f(x)=\sum_{i=0}^n a_i x^i\Big(\sum_{j=1}^n a_j^2\neq 0\Big)\in \mathbb{Z}[x]$$ 证明：对任意常数 $C\in\mathbb{R}$，</p>
+                <p>$${\lvert\{u \in \mathbb{R}\mid f(u) = C\}\rvert\leq n}$$</p>
+                <p class="en">Let $f(x)=\sum_{i=0}^n a_i x^i\ (\sum_{j=1}^n a_j^2\neq 0)\in\mathbb{Z}[x]$. Prove that for every constant $C\in\mathbb{R}$, $|\{u\in\mathbb{R}\mid f(u)=C\}|\le n$.</p>
+            </div>
+        </div>
+
+        <div class="problem">
+            <div class="problem-header">第3题（20分 / 20 points）</div>
+            <div class="problem-text">
+                <p>设 $$K_0=\mathbb{Q},\qquad G_i=\{p\in \mathbb{C}\mid p^o=q^r,\ q\in K_i,\ r,o\in \mathbb{Z}^*\},\qquad K_j=K_{j-1}(G_{j-1}),$$ 并设 $f(x)\in \mathbb{Z}[x]$ 为非常数多项式，记 $n=\deg f$。</p>
+                <p class="en">Let $K_0=\mathbb{Q}$, $G_i=\{p\in\mathbb{C}\mid p^o=q^r,\ q\in K_i,\ r,o\in\mathbb{Z}^*\}$, $K_j=K_{j-1}(G_{j-1})$, and let $f(x)\in\mathbb{Z}[x]$ be non-constant, $n=\deg f$.</p>
+                <ol>
+                    <li>（2分 / 2 points）是否成立：（$f(x)$ 在 $\mathbb{R}$ 上不可约）$\implies$（$f(x)$ 在 $K_1$ 上不可约）？回答并证明。
+                        <span class="en">Is it true that ($f$ irreducible over $\mathbb{R}$) $\implies$ ($f$ irreducible over $K_1$)? Answer the question and prove your answer.</span>
+                    </li>
+                    <li>（6分 / 6 points）是否成立：（$f(x)$ 在 $K_1$ 上不可约）$\implies$（$f(x)$ 在 $\mathbb{R}$ 上不可约）？回答并证明。
+                        <span class="en">Is it true that ($f$ irreducible over $K_1$) $\implies$ ($f$ irreducible over $\mathbb{R}$)? Answer the question and prove your answer.</span>
+                    </li>
+                    <li>（6分 / 6 points）是否成立：$(\exists M \in \mathbb{N})(\forall f(x) \in \mathbb{Z}[x])[(f(x)$ 在 $K_M$ 上不可约$) \implies (f(x)$ 在 $\mathbb{R}$ 上不可约$)]$？请就次数 $n=\deg f$ 指出该蕴含式对哪些 $n$ 成立、对哪些 $n$ 不成立，并证明。
+                        <span class="en">Is it true that $(\exists M\in\mathbb{N})(\forall f\in\mathbb{Z}[x])[(f\ \text{irreducible over}\ K_M)\implies(f\ \text{irreducible over}\ \mathbb{R})]$? Determine, in terms of the degree $n=\deg f$, for which $n$ it holds and for which it fails, and prove your answer.</span>
+                    </li>
+                    <li>（6分 / 6 points）设 $$K^*_0=\mathbb{Q},\qquad G^*_i=\{p\in \mathbb{R}\mid p^o=q^r,\ q\in K^*_i,\ r,o\in \mathbb{Z}^*\},\qquad K^*_j=K^*_{j-1}(G^*_{j-1})$$ 求一个 $f(x) \in \mathbb{Z}[x]$，使得它对一切 $M \in \mathbb{N}$ 都在 $K^*_M$ 上不可约，但在 $\mathbb{R}$ 上可约，并给出它在 $\mathbb{R}$ 上的分解。
+                        <span class="en">Let $K^*_0=\mathbb{Q}$, $G^*_i=\{p\in\mathbb{R}\mid p^o=q^r,\ q\in K^*_i,\ r,o\in\mathbb{Z}^*\}$, $K^*_j=K^*_{j-1}(G^*_{j-1})$. Find $f\in\mathbb{Z}[x]$ that is irreducible over $K^*_M$ for every $M\in\mathbb{N}$ but reducible over $\mathbb{R}$, and factor it over $\mathbb{R}$.</span>
+                    </li>
+                </ol>
+                <div class="notes">
+                    <p><strong>注释 / Notes</strong></p>
+                    <p>(i) 次数 $\le4$ 的多项式方程都可用根式求解（求根公式、Cardano 公式、Ferrari 公式）。</p>
+                    <p class="en">(i) Every polynomial equation of degree $\le4$ is solvable by radicals (quadratic formula, Cardano, Ferrari).</p>
+                    <p>(ii)（Abel--Ruffini）次数 $\ge5$ 的多项式方程没有一般的根式解法；例如 $x^5-4x+2$ 的任一根都不能用根式表示。更一般地，对每个 $n\ge5$，$x^n-x-1$ 在 $\mathbb{Q}$ 上不可约，并且在由 $\mathbb{Q}$ 反复添加根式所得的任意域上仍不可约；特别地，它的根都不能用根式表示。</p>
+                    <p class="en">(ii) (Abel--Ruffini) There is no general formula in radicals for equations of degree $\ge5$; e.g. no root of $x^5-4x+2$ is expressible by radicals. More generally, for every $n\ge5$, $x^n-x-1$ is irreducible over $\mathbb{Q}$ and remains so over every field obtained from $\mathbb{Q}$ by iterated adjunction of radicals.</p>
+                    <p>(iii)（casus irreducibilis）若 $\mathbb{Q}$ 上的不可约三次多项式有三个实根，则它的任一根都不能用实根式表示，无论嵌套多深。</p>
+                    <p class="en">(iii) (Casus irreducibilis) If an irreducible cubic over $\mathbb{Q}$ has three real roots, then none of its roots can be expressed by real radicals, however deeply nested.</p>
+                    <p>(iv) 若 $g\in K_j[x]$ 的次数 $\le 4$，则由 (i)，$g$ 的每个根都属于某个 $K_{j'}$（$j'\ge j$）。因此，若 $f\in\mathbb{Z}[x]$ 在某个 $K_j$ 上有次数 $\le4$ 的因式，则 $f$ 有一个可用根式表示的根。</p>
+                    <p class="en">(iv) If $g\in K_j[x]$ has degree $\le4$, then by (i) every root of $g$ lies in some $K_{j'}$ ($j'\ge j$). Hence if $f\in\mathbb{Z}[x]$ has a factor of degree $\le4$ over some $K_j$, then $f$ has a root expressible by radicals.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="problem">
+            <div class="problem-header">第4题（20分 / 20 points）</div>
+            <div class="problem-text">
+                <p>国际象棋中马（knight）的走法可写为</p>
+                <p>$$K_2=\{\pm1\pm 2i,\ \pm 2 \pm i\}\subset\mathbb{Z}[i]$$</p>
+                <p>现在定义“$a$-马”（strange A-knight）的走法集合为</p>
+                <p>$$K_a=\{\pm1\pm ai,\ \pm a \pm i\}\subset\mathbb{Z}[i]$$</p>
+                <p>（其中 $\pm1\pm ai$ 表示两个符号各自独立取值所得的四个数。）</p>
+                <p class="en">The moves of an ordinary chess knight are $K_2=\{\pm1\pm2i,\ \pm2\pm i\}\subset\mathbb{Z}[i]$. Define the $a$-knight by $K_a=\{\pm1\pm ai,\ \pm a\pm i\}\subset\mathbb{Z}[i]$ (where $\pm1\pm ai$ stands for all four independent choices of signs).</p>
+                <ol>
+                    <li>（6分 / 6 points）证明：若 $a \equiv 1 \pmod{2}$，则对任意 $n\ge 1$ 与任意 $k_1,\ldots,k_n\in K_a$，$$\sum_{i=1}^n k_i\neq 1$$
+                        <span class="en">Prove: if $a\equiv1\pmod2$, then $\sum_{i=1}^n k_i\neq 1$ for every $n\ge1$ and all $k_1,\ldots,k_n\in K_a$.</span>
+                    </li>
+                    <li>（6分 / 6 points）证明：若 $a \equiv 0 \pmod{2}$，则对任意 $z\in\mathbb{Z}[i]$，存在 $n\ge 1$ 与 $k_1,\ldots,k_n\in K_a$ 使得 $$\sum_{i=1}^n k_i=z$$
+                        <span class="en">Prove: if $a\equiv0\pmod2$, then for every $z\in\mathbb{Z}[i]$ there exist $n\ge1$ and $k_1,\ldots,k_n\in K_a$ with $\sum_{i=1}^n k_i=z$.</span>
+                    </li>
+                    <li>（8分 / 8 points）设 $m\ge 5$ 为整数，棋盘 $$B_m=\{a+bi\in\mathbb{Z}[i]\mid 0\le a,b<m\}$$ 证明：对任意 $z\in B_m$，存在 $n\ge 1$ 与 $k_1,\ldots,k_n\in K_2$，使得 $$\sum_{i=1}^n k_i=z\qquad\text{且 / and}\qquad \sum_{i=1}^j k_i\in B_m\ \ (1\le j\le n)$$ 也就是说，普通的马从角上的 $0$ 出发，可以走遍棋盘的每一格，且全程不离开棋盘。
+                        <span class="en">Let $m\ge5$ and $B_m=\{a+bi\in\mathbb{Z}[i]\mid 0\le a,b<m\}$ be the $m\times m$ board. Prove that for every $z\in B_m$ there exist $n\ge1$ and $k_1,\ldots,k_n\in K_2$ such that $\sum_{i=1}^n k_i=z$ and every partial sum $\sum_{i=1}^j k_i$ lies in $B_m$ ($1\le j\le n$).</span>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="back">
+        <a href="index.html">← 返回首页 Back to Home</a>
+    </div>
+
+    <footer>
+        <p>灵息杯 AMO</p>
+    </footer>
+
+</body>
+</html>
