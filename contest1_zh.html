@@ -80,7 +80,7 @@
     <div class="content">
 
         <div class="problem-text" style="margin-bottom: 30px;">
-            <p><strong>约定：</strong>全文 $\mathbb{N}=\{0,1,2,3,\ldots\}$——按中国教材的习惯，自然数<strong>包含 $0$</strong>，即 $0\in\mathbb{N}$——$\mathbb{Z}^{*}=\mathbb{Z}\setminus\{0\}$；对子域 $K\subseteq\mathbb{C}$ 与集合 $S\subseteq\mathbb{C}$，$K(S)$ 表示包含 $K$ 与 $S$ 的最小子域；“在 $K$ 上不可约”只对非常数多项式而言。</p>
+            <p><strong>约定：</strong>全文 $\mathbb{N}=\{0,1,2,3,\ldots\}$——按中国教材的习惯，自然数<strong>包含 $0$</strong>，即 $0\in\mathbb{N}$——$\mathbb{Z}^{*}=\mathbb{Z}\setminus\{0\}$。第 3 题用到记号 $K(S)$；没有学过代数学的选手请自行查阅“域扩张”这个词条。</p>
         </div>
 
         <div class="problem">
@@ -103,7 +103,7 @@
         <div class="problem">
             <div class="problem-header">第3题（20分）</div>
             <div class="problem-text">
-                <p>设 $$K_0=\mathbb{Q},\qquad G_i=\{p\in \mathbb{C}\mid p^o=q^r,\ q\in K_i,\ r,o\in \mathbb{Z}^*\},\qquad K_j=K_{j-1}(G_{j-1}),$$ 并设 $f(x)\in \mathbb{Z}[x]$ 为非常数多项式，记 $n=\deg f$。</p>
+                <p>设 $$K_0=\mathbb{Q},\qquad G_i=\{p\in \mathbb{C}\mid p^o=q^r,\ q\in K_i,\ r,o\in \mathbb{Z}^*\},\qquad K_j=K_{j-1}(G_{j-1}),$$ 并设 $f(x)\in \mathbb{Z}[x]$ 为非常数多项式，记 $n=\deg f$。“在 $K$ 上不可约”指 $f$ 不能写成 $K[x]$ 中两个次数更小的多项式之积；因此只对非常数多项式谈论可约与否。</p>
                 <ol>
                     <li>（2分）是否成立：（$f(x)$ 在 $\mathbb{R}$ 上不可约）$\implies$（$f(x)$ 在 $K_1$ 上不可约）？回答并证明。</li>
                     <li>（6分）是否成立：（$f(x)$ 在 $K_1$ 上不可约）$\implies$（$f(x)$ 在 $\mathbb{R}$ 上不可约）？回答并证明。</li>
@@ -113,9 +113,8 @@
                 <div class="notes">
                     <p><strong>注释</strong></p>
                     <p>(i) 次数 $\le4$ 的多项式方程都可用根式求解（求根公式、Cardano 公式、Ferrari 公式）。</p>
-                    <p>(ii)（Abel--Ruffini）次数 $\ge5$ 的多项式方程没有一般的根式解法；例如 $x^5-4x+2$ 的任一根都不能用根式表示。更一般地，对每个 $n\ge5$，$x^n-x-1$ 在 $\mathbb{Q}$ 上不可约，并且在由 $\mathbb{Q}$ 反复添加根式所得的任意域上仍不可约；特别地，它的根都不能用根式表示。</p>
-                    <p>(iii)（不可约情形 / casus irreducibilis）若 $\mathbb{Q}$ 上的不可约三次多项式有三个实根，则它的任一根都不能用实根式表示，无论嵌套多深。</p>
-                    <p>(iv) 若 $g\in K_j[x]$ 的次数 $\le 4$，则由 (i)，$g$ 的每个根都属于某个 $K_{j'}$（$j'\ge j$）。因此，若 $f\in\mathbb{Z}[x]$ 在某个 $K_j$ 上有次数 $\le4$ 的因式，则 $f$ 有一个可用根式表示的根。</p>
+                    <p>(ii)（Abel--Ruffini）次数 $\ge5$ 的多项式方程没有一般的根式解法；例如 $x^5-4x+2$ 的任一根都不能用根式表示。</p>
+                    <p>(iii)（不可约情形 / casus irreducibilis）若 $\mathbb{Q}$ 上的不可约三次多项式有三个实根，则它的任一根都不能用实根式表示。</p>
                 </div>
             </div>
         </div>
@@ -131,7 +130,7 @@
                 <ol>
                     <li>（6分）证明：若 $a \equiv 1 \pmod{2}$，则对任意 $n\ge 1$ 与任意 $k_1,\ldots,k_n\in K_a$，$$\sum_{i=1}^n k_i\neq 1$$</li>
                     <li>（6分）证明：若 $a \equiv 0 \pmod{2}$，则对任意 $z\in\mathbb{Z}[i]$，存在 $n\ge 1$ 与 $k_1,\ldots,k_n\in K_a$ 使得 $$\sum_{i=1}^n k_i=z$$</li>
-                    <li>（8分）设整数 $m\ge 5$，棋盘 $$B_m=\{a+bi\in\mathbb{Z}[i]\mid 0\le a,b&lt;m\}$$ 证明：对任意 $z\in B_m$，存在 $n\ge 1$ 与 $k_1,\ldots,k_n\in K_2$，使得 $$\sum_{i=1}^n k_i=z\qquad\text{且}\qquad \sum_{i=1}^j k_i\in B_m\ \ (1\le j\le n)$$ 也就是说，普通的马从角上的 $0$ 出发，可以走遍棋盘的每一格，且全程不离开棋盘。</li>
+                    <li>（8分）设整数 $m\ge 4$，棋盘 $$B_m=\{a+bi\in\mathbb{Z}[i]\mid 0\le a,b&lt;m\}$$ 证明：对任意 $z\in B_m$，存在 $n\ge 1$ 与 $k_1,\ldots,k_n\in K_2$，使得 $$\sum_{i=1}^n k_i=z\qquad\text{且}\qquad \sum_{i=1}^j k_i\in B_m\ \ (1\le j\le n)$$ 也就是说，普通的马从角上的 $0$ 出发，可以走遍棋盘的每一格，且全程不离开棋盘。</li>
                 </ol>
             </div>
         </div>
@@ -139,15 +138,14 @@
         <div class="problem">
             <div class="problem-header">第5题（20分）</div>
             <div class="problem-text">
-                <p>设 $n\ge 1$，$K=(a_1,a_2,\ldots ,a_n)$ 是一个由 $0$ 和 $1$ 组成的有限序列。按下列规则由 $K$ 得到同样长度的新序列 $T(K)=(b_1,\ldots ,b_n)$。</p>
-                <p><strong>第一步：发出指令。</strong>每个位置 $i$ <strong>至多</strong>发出一条指令。</p>
+                <p>设 $n\ge 1$，$K=(a_1,a_2,\ldots ,a_n)$ 是一个由 $0$ 和 $1$ 组成的有限序列。按下列规则依次处理各个位置，得到新序列 $T(K)=(b_1,\ldots ,b_n)$。</p>
+                <p><strong>规则：</strong>依次处理位置 $i=1,2,\ldots ,n$。轮到位置 $i$ 时，先按<strong>当前</strong>的序列读出 $a_i$，按下面的条款决定是否改写；若需改写，则<strong>立刻</strong>执行，然后才处理下一个位置。因此，后面的计算会读到前面已经改过的值。以下各式中出现的 $a_j$ 一律指处理时刻的当前值。</p>
                 <ul>
-                    <li>若 $a_i=1$，令 $p_i=\bigl|\{j&lt;i\mid a_j=1\}\bigr|$ 为它前面 $1$ 的个数。若 $p_i\ge 2$，则位置 $i$ 发出指令：“把第 $i+p_i-1$ 位改成 $1$”。</li>
-                    <li>若 $a_i=0$，令 $s_i=\bigl|\{j&gt;i\mid a_j=0\}\bigr|$ 为它后面 $0$ 的个数。若 $s_i\ge 2$，则位置 $i$ 发出指令：“把第 $i-s_i+1$ 位改成 $0$”。</li>
+                    <li>若当前 $a_i=1$，令 $p_i=\bigl|\{j&lt;i\mid a_j=1\}\bigr|$ 为它前面 $1$ 的个数。若 $p_i\ge 2$，则把第 $i+p_i-1$ 位改成 $1$。</li>
+                    <li>若当前 $a_i=0$，令 $s_i=\bigl|\{j&gt;i\mid a_j=0\}\bigr|$ 为它后面 $0$ 的个数。若 $s_i\ge 2$，则把第 $i-s_i+1$ 位改成 $0$。</li>
                 </ul>
-                <p>其余情形都不发出指令：数出的个数为 $0$ 或 $1$ 时不发（从自己数起，第一个就是自己），所指的位置不在 $\{1,\ldots ,n\}$ 内时也不发（不循环、不溢出）。</p>
-                <p><strong>第二步：同时执行。</strong>所有指令都由原序列 $K$ 算出，然后同时执行。若位置 $t$ 只收到“改成 $1$”的指令，则 $b_t=1$；只收到“改成 $0$”的指令，则 $b_t=0$；同时收到两种指令，或者没有收到任何指令，则 $b_t=a_t$。</p>
-                <p><strong>问题：</strong>证明 $T(K)$ 必有<strong>不动点</strong>，即存在 $t\in\{1,\ldots ,n\}$ 使得 $b_t=a_t$。</p>
+                <p>其余情形什么都不做：数出的个数为 $0$ 或 $1$ 时不做；所指的位置不在 $\{1,\ldots ,n\}$ 内时也不做（不循环、不越界）。处理完位置 $n$ 后所得的序列就是 $T(K)=(b_1,\ldots ,b_n)$。</p>
+                <p><strong>问题：</strong>是否对任意 $n\ge 1$ 与任意 $K$，$T(K)$ 都必有<strong>不动点</strong>，即存在 $t\in\{1,\ldots ,n\}$ 使得 $b_t=a_t$（$a_t$ 指<strong>原</strong>序列 $K$ 的第 $t$ 位）？若是，请给出证明；若否，请举出反例。</p>
             </div>
         </div>
 
