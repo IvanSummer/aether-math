@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
+    <title>灵息杯数学公开赛 · Aether Mathematics Open</title>
     <style>
         * {
             margin: 0;
@@ -25,41 +25,30 @@
         .container {
             text-align: center;
             padding: 20px;
-            max-width: 420px;
+            max-width: 560px;
         }
 
-        .status-icon {
-            width: 40px;
-            height: 40px;
-            border: 3px solid #e5e5e5;
-            border-top-color: #333;
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-            margin: 0 auto 24px;
+        h1 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 6px;
         }
 
-        h2 {
-            font-size: 18px;
-            font-weight: 400;
-            margin-bottom: 12px;
-            line-height: 1.5;
-        }
-
-        p.sub {
+        .sub {
             font-size: 13px;
             color: #999;
-            margin-bottom: 32px;
+            margin-bottom: 36px;
+            letter-spacing: 0.05em;
         }
 
         .button-group {
-            display: none;
+            display: flex;
             gap: 12px;
             justify-content: center;
             flex-wrap: wrap;
-            animation: fadeIn 0.3s ease;
         }
 
-        button, .link-btn {
+        .link-btn, .link-btn-sm {
             padding: 10px 28px;
             font-size: 14px;
             border: 1px solid #333;
@@ -73,91 +62,72 @@
             display: inline-block;
         }
 
-        button:hover, .link-btn:hover {
+        .link-btn:hover, .link-btn-sm:hover {
             background-color: #333;
             color: #fff;
         }
 
-        .manual-trigger {
-            margin-top: 20px;
+        .link-btn-sm {
+            padding: 7px 18px;
             font-size: 13px;
+            border-color: #bbb;
+            color: #666;
+        }
+
+        .link-btn-sm:hover {
+            border-color: #333;
+        }
+
+        .small-group {
+            margin-top: 26px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .notice {
+            margin-top: 34px;
+            font-size: 12.5px;
+            color: #999;
+            line-height: 1.8;
+        }
+
+        .notice a {
             color: #888;
-            cursor: pointer;
             text-decoration: underline;
             text-underline-offset: 3px;
-        }
-
-        .manual-trigger:hover {
-            color: #333;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
-            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div id="auto-box">
-            <div class="status-icon"></div>
-            <h2 id="status-text">正在检测语言偏好...</h2>
-            <p class="sub" id="sub-text">根据您的浏览器设置自动跳转</p>
-            <div class="manual-trigger" onclick="showManual()">手动选择语言 / Manual selection</div>
-        </div>
+        <h1>灵息杯数学公开赛</h1>
+        <p class="sub">THE AETHER MATHEMATICS OPEN</p>
 
-        <div class="button-group" id="manual-box">
+        <div class="button-group">
             <a class="link-btn" href="introduction_zh.html">阅读中文</a>
             <a class="link-btn" href="introduction_en.html">Read English</a>
-            <a class="link-btn" href="contest1_zh.html">第一届正赛题目（中文卷）</a>
-            <a class="link-btn" href="contest1_en.html">Problems (English)</a>
         </div>
+
+        <div class="small-group">
+            <a class="link-btn-sm" href="date_zh.html">赛程</a>
+            <a class="link-btn-sm" href="date_en.html">Schedule</a>
+            <a class="link-btn-sm" href="notice_zh.html">公告</a>
+            <a class="link-btn-sm" href="notice_en.html">Announcements</a>
+        </div>
+
+        <div class="small-group">
+            <a class="link-btn-sm" href="contest1_zh.html">第一届正赛题目（中文卷）</a>
+            <a class="link-btn-sm" href="contest1_en.html">Problems (English)</a>
+        </div>
+
+        <p class="notice">
+            第一届正赛：2026 年 10 月 1 日 00:00 — 2027 年 2 月 5 日（除夕）23:59（北京时间）<br>
+            1st Open: 1 October 2026, 00:00 &mdash; 5 February 2027, 23:59 (UTC+8)
+        </p>
     </div>
-
-    <script>
-        function detect() {
-            // 1. 浏览器语言
-            const lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-            // 2. 系统时区
-            const tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || '').toLowerCase();
-
-            // 判断是否为中文环境
-            const isChinese = lang.startsWith('zh') || 
-                              ['asia/shanghai', 'asia/chongqing', 'asia/urumqi', 
-                               'asia/hong_kong', 'asia/taipei', 'asia/macau'].includes(tz);
-
-            const statusText = document.getElementById('status-text');
-            const subText = document.getElementById('sub-text');
-
-            if (isChinese) {
-                statusText.textContent = '检测到中文环境，正在跳转...';
-                subText.textContent = '若未自动跳转，请点击下方手动选择';
-                setTimeout(() => {
-                    location.replace('introduction_zh.html');
-                }, 1000);
-            } else {
-                statusText.textContent = 'English environment detected. Redirecting...';
-                subText.textContent = 'If not redirected, please select manually below';
-                setTimeout(() => {
-                    location.replace('introduction_en.html');
-                }, 1000);
-            }
-        }
-
-        function showManual() {
-            document.getElementById('auto-box').style.display = 'none';
-            const manual = document.getElementById('manual-box');
-            manual.style.display = 'flex';
-        }
-
-        // 页面加载后立即检测
-        detect();
-    </script>
 
 </body>
 </html>
