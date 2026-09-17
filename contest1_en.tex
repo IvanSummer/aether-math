@@ -10,6 +10,7 @@
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{4pt}
+\setcounter{secnumdepth}{0}   % no automatic "0.1" numbers: problems are labelled by hand
 
 \pagestyle{myheadings}
 \markboth{The 1st Aether Mathematics Open}{The 1st Aether Mathematics Open}
@@ -41,7 +42,7 @@ should look up the term ``field extension''.
 % -------------------------------------------------- problems
 \section*{Problems}
 
-\subsection*{Problem 1 \quad\normalfont\normalsize (20 points)}
+\subsection{Problem 1}
 
 Prove that for all $n,m\in\mathbb{N}\setminus\{0,1\}$ (that is, $n,m\ge 2$)
 there exist $x,y,z\in\mathbb{N}$ such that
@@ -53,17 +54,21 @@ z^n \not\equiv 0 \pmod{m}$$
 (Here $x,y,z$ are required to be pairwise distinct. Recall
 $0\in\mathbb{N}$, so each of them is allowed to be $0$.)
 
-\subsection*{Problem 2 \quad\normalfont\normalsize (20 points)}
+20 points.
+
+\subsection{Problem 2}
 
 Let
 
 $$f(x)=\sum_{i=0}^n a_i x^i\ \Bigl(\sum_{j=1}^n a_j^2\neq 0\Bigr)\in \mathbb{Z}[x]$$
 
-Prove that for every constant $C\in \mathbb {R}$
+Prove that for every constant $C\in \mathbb{R}$
 
 $${\lvert\{u \in \mathbb{R}\mid f(u) = C\}\rvert\leq n}$$
 
-\subsection*{Problem 3 \quad\normalfont\normalsize (20 points)}
+20 points.
+
+\subsection{Problem 3}
 
 Let
 
@@ -80,16 +85,20 @@ and write $n=\deg f$ (throughout, $f$ is assumed to be non-constant). Here
 polynomials of smaller degree in $K[x]$; accordingly, reducibility is
 discussed only for non-constant polynomials.
 
-\paragraph*{(1)\quad\normalfont (2 points)}
+\subsubsection{(1)}
 Is it true that ($f(x)$ is irreducible over $\mathbb{R}$) $\implies$
 ($f(x)$ is irreducible over $K_1$)? Answer the question and prove your answer.
 
-\paragraph*{(2)\quad\normalfont (6 points)}
+2 points.
+
+\subsubsection{(2)}
 Is it true that ($f(x)$ is irreducible over $K_1$) $\implies$
 ($f(x)$ is irreducible over $\mathbb{R}$)? Answer the question and prove your
 answer.
 
-\paragraph*{(3)\quad\normalfont (6 points)}
+6 points.
+
+\subsubsection{(3)}
 Is it true that
 $(\exists M \in \mathbb{N})(\forall f(x) \in \mathbb{Z}[x])[(f(x)$
 irreducible over $K_M) \implies (f(x)$ irreducible over
@@ -100,7 +109,9 @@ $K_M=K_0=\mathbb{Q}$.)
 Determine, in terms of the degree $n=\deg f$, for which $n$ such an
 implication can hold and for which it fails, and prove your answer.
 
-\paragraph*{(4)\quad\normalfont (6 points)}
+6 points.
+
+\subsubsection{(4)}
 Let
 
 $$K^*_0=\mathbb{Q}$$
@@ -113,21 +124,22 @@ Find an $f(x) \in \mathbb{Z}[x]$ that is irreducible over $K^*_M$ for every
 $M \in \mathbb{N}$ but is not irreducible over $\mathbb{R}$, and factor it
 over $\mathbb{R}$.
 
-\paragraph*{Notes}
-\begin{itemize}
-\item[(i)] Every polynomial equation of degree $\le4$ is solvable by
+6 points.
+
+\subsubsection*{Notes}
+
+(i) Every polynomial equation of degree $\le4$ is solvable by
 radicals (the quadratic formula, Cardano, and Ferrari).
 
-\item[(ii)] (Abel--Ruffini) There is no general formula in radicals for
-polynomial equations of degree $\ge5$; for example, no root of
-$x^5-4x+2$ can be expressed by radicals.
+(ii) (Abel--Ruffini) There is no general formula in radicals for
+polynomial equations of degree $\ge5$; for example, no root
+of $x^5-4x+2$ can be expressed by radicals.
 
-\item[(iii)] (casus irreducibilis) If an irreducible cubic over
-$\mathbb{Q}$ has three real roots, then none of its roots can be expressed
-by real radicals.
-\end{itemize}
+(iii) (casus irreducibilis) If an irreducible cubic over
+$\mathbb{Q}$ has three real roots, then none of its roots can
+be expressed by real radicals.
 
-\subsection*{Problem 4 \quad\normalfont\normalsize (20 points)}
+\subsection{Problem 4}
 
 The eight moves of an ordinary chess knight can be written as the set
 
@@ -139,20 +151,24 @@ $$K_a=\{\pm1\pm ai,\ \pm a \pm i\}\subset\mathbb{Z}[i]$$
 
 (Here $\pm1\pm ai$ stands for all four independent choices of the two signs.)
 
-\paragraph*{(1)\quad\normalfont (6 points)}
+\subsubsection{(1)}
 Prove:
 
 $$a \equiv 1 \pmod{2}\implies\sum_{i=1}^n k_i\neq 1,
 \quad\text{for every } n\ge 1 \text{ and all } k_1,\ldots,k_n\in K_a$$
 
-\paragraph*{(2)\quad\normalfont (6 points)}
+6 points.
+
+\subsubsection{(2)}
 Prove:
 
 $$a \equiv 0 \pmod{2}\implies
 \bigl(\forall z\in\mathbb{Z}[i]\bigr)\ \bigl(\exists n\ge 1,\ 
 k_1,\ldots,k_n\in K_a\bigr):\ \sum_{i=1}^n k_i=z$$
 
-\paragraph*{(3)\quad\normalfont (8 points)}
+6 points.
+
+\subsubsection{(3)}
 Let $m\ge 4$ be an integer and let
 
 $$B_m=\{a+bi\in\mathbb{Z}[i]\mid 0\le a,b<m\}$$
@@ -166,13 +182,14 @@ $$\sum_{i=1}^n k_i=z\qquad\text{and}\qquad
 that is, an ordinary knight starting at the corner $0$ can reach every
 square of the board by a path that never leaves the board.
 
-\subsection*{Problem 5 \quad\normalfont\normalsize (20 points)}
+8 points.
+
+\subsection{Problem 5}
 
 Let $n\ge 1$ and let $K=(a_1,a_2,\ldots ,a_n)$ be a finite sequence with
 $a_i\in\{0,1\}$. From $K$ we produce a new sequence
 $T(K)=(b_1,\ldots ,b_n)$ of the same length as follows.
 
-\paragraph*{Rule.}
 Process the positions $i=1,2,\ldots ,n$ one after another. When it is the
 turn of position $i$, read the \emph{current} value of $a_i$, decide
 according to the clauses below whether to rewrite something, and if so carry
@@ -194,12 +211,13 @@ $\{1,\ldots ,n\}$ --- there is no wrap-around and no overflow. The sequence
 obtained once position $n$ has been processed is
 $T(K)=(b_1,\ldots ,b_n)$.
 
-\paragraph*{Question.}
 Is it true that for every $n\ge 1$ and every sequence $K$, the sequence
 $T(K)$ always has a \emph{fixed point}, that is, an index
 $t\in\{1,\ldots ,n\}$ with $b_t=a_t$ (where $a_t$ denotes the $t$-th entry of
 the \emph{original} sequence $K$)? If so, prove it; if not, give a
 counterexample.
+
+20 points.
 
 % -------------------------------------------------- rules
 \section*{Contest Rules}
@@ -237,6 +255,28 @@ attached to them.
 The problems were proposed by XIA Yihuan and test-solved by XIA Yihuan
 together with several agents. We are grateful to Loveinterpretation for her
 indispensable contributions.
+
+% -------------------------------------------------- LLM disclosure
+\section*{Note on the Use of Large Language Models}
+
+In the course of setting the problems, large language models were used on
+multiple occasions, as listed below.
+
+Moonshot AI's K2.5 thinking model was confirmed to have solved Problems 1, 2,
+and 3 and to have helped guide their difficulty, and it generated some
+webpages; DeepSeek's deep-thinking model was confirmed to have solved
+Problem 3; Tencent's WorkBuddy (Hy4 preview) was confirmed to have solved
+Problems 4 and 5 and to have helped guide their difficulty, directly pushed
+some webpages, and exported LaTeX files. All three models above and
+Overleaf's intelligent error correction provided guidance on or translated
+the English competition problem files.
+
+All the problems are within the editor's competence, and there was no
+malicious use of large language models to increase difficulty during the
+problem-setting stage. However, without the assistance of these large
+language models, it would have been impossible to hold this competition. Of
+course, the editor checked and adjusted the work at every stage. If there are
+still any oversights or omissions, please point them out.
 
 \vspace{1em}
 \begin{center}
