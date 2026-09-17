@@ -16,7 +16,8 @@
 \section{Introduction}
 
 Welcome to the 1st Aether Mathematics Open!
-The contest will be held from September 1 to December 31, 2026.
+The contest will be held from 1 October 2026, 00:00 to 5 February 2027
+(Chinese New Year's Eve), 23:59 (Beijing time, UTC+8).
 It consists of 5 problems, each worth 20 points, for a total of 100 points.
 
 \paragraph{Conventions.}
@@ -190,11 +191,11 @@ $T(K)=(b_1,\ldots ,b_n)$ of the same length as follows.
 \paragraph{Step 1: instructions.}
 Each position $i$ issues \emph{at most one} instruction.
 \begin{itemize}
-\item If $a_i=1$, let $p_i=\#\{j<i\mid a_j=1\}$ be the number of $1$'s
-standing before it. If $p_i\ge 2$, position $i$ issues the instruction
+\item If $a_i=1$, let $p_i=\bigl|\{j<i\mid a_j=1\}\bigr|$ be the number of
+$1$'s standing before it. If $p_i\ge 2$, position $i$ issues the instruction
 ``put a $1$ into position $i+p_i-1$''.
-\item If $a_i=0$, let $s_i=\#\{j>i\mid a_j=0\}$ be the number of $0$'s
-standing after it. If $s_i\ge 2$, position $i$ issues the instruction
+\item If $a_i=0$, let $s_i=\bigl|\{j>i\mid a_j=0\}\bigr|$ be the number of
+$0$'s standing after it. If $s_i\ge 2$, position $i$ issues the instruction
 ``put a $0$ into position $i-s_i+1$''.
 \end{itemize}
 In every other case no instruction is issued: if the number just counted is
