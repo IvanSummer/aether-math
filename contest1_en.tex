@@ -24,11 +24,9 @@ It consists of 5 problems, each worth 20 points, for a total of 100 points.
 Throughout this paper,
 $\mathbb{N}=\{0,1,2,3,\ldots\}$ --- in accordance with the convention used in
 Chinese textbooks, the natural numbers \emph{include} $0$, so $0\in\mathbb{N}$ ---
-and $\mathbb{Z}^{*}=\mathbb{Z}\setminus\{0\}$;
-for a subfield $K\subseteq\mathbb{C}$ and a set $S\subseteq\mathbb{C}$,
-$K(S)$ denotes the smallest subfield of $\mathbb{C}$ containing $K$ and $S$;
-and a polynomial is called irreducible over $K$ only if it is non-constant and
-is not a product of two non-constant polynomials of $K[x]$.
+and $\mathbb{Z}^{*}=\mathbb{Z}\setminus\{0\}$.
+Problem~3 uses the notation $K(S)$; contestants who have not studied algebra
+should look up the term ``field extension''.
 
 \section{Problems}
 \subsection{Problem 1}
@@ -69,7 +67,10 @@ $$K_j=K_{j-1}(G_{j-1})$$
 
 $$f(x)\in \mathbb{Z}[x]$$
 
-and write $n=\deg f$ (throughout, $f$ is assumed to be non-constant).
+and write $n=\deg f$ (throughout, $f$ is assumed to be non-constant). Here
+``irreducible over $K$'' means that $f$ cannot be written as a product of two
+polynomials of smaller degree in $K[x]$; accordingly, reducibility is
+discussed only for non-constant polynomials.
 
 \subsubsection{(1)}
 
@@ -119,20 +120,11 @@ radicals (the quadratic formula, Cardano, and Ferrari).
 
 (ii) (Abel--Ruffini) There is no general formula in radicals for
 polynomial equations of degree $\ge5$; for example, no root
-of $x^5-4x+2$ can be expressed by radicals. More generally,
-for every $n\ge5$ the polynomial $x^n-x-1$ is irreducible over
-$\mathbb{Q}$ and remains so over every field obtained from
-$\mathbb{Q}$ by iteratively adjoining radicals; in particular,
-none of its roots can be expressed by radicals.
+of $x^5-4x+2$ can be expressed by radicals.
 
 (iii) (casus irreducibilis) If an irreducible cubic over
 $\mathbb{Q}$ has three real roots, then none of its roots can
-be expressed by real radicals, however deeply nested.
-
-(iv) If $g\in K_j[x]$ has degree $\le 4$, then by (i) every root
-of $g$ lies in $K_{j'}$ for some $j'\ge j$. Consequently, if
-$f\in\mathbb{Z}[x]$ has a factor of degree $\le4$ over some $K_j$,
-then $f$ has a root that can be expressed by radicals.
+be expressed by real radicals.
 
 \subsection{Problem 4}
 
@@ -167,7 +159,7 @@ k_1,\ldots,k_n\in K_a\bigr):\ \sum_{i=1}^n k_i=z$$
 
 \subsubsection{(3)}
 
-Let $m\ge 5$ be an integer and let
+Let $m\ge 4$ be an integer and let
 
 $$B_m=\{a+bi\in\mathbb{Z}[i]\mid 0\le a,b<m\}$$
 
@@ -188,30 +180,31 @@ Let $n\ge 1$ and let $K=(a_1,a_2,\ldots ,a_n)$ be a finite sequence with
 $a_i\in\{0,1\}$. From $K$ we produce a new sequence
 $T(K)=(b_1,\ldots ,b_n)$ of the same length as follows.
 
-\paragraph{Step 1: instructions.}
-Each position $i$ issues \emph{at most one} instruction.
+\paragraph{Rule.}
+Process the positions $i=1,2,\ldots ,n$ one after another. When it is the
+turn of position $i$, read the \emph{current} value of $a_i$, decide
+according to the clauses below whether to rewrite something, and if so carry
+that rewrite out \emph{immediately}; only then move on to the next position.
+Thus later steps read values that earlier steps have already changed. In the
+formulas below, $a_j$ always denotes the current value at that moment.
 \begin{itemize}
-\item If $a_i=1$, let $p_i=\bigl|\{j<i\mid a_j=1\}\bigr|$ be the number of
-$1$'s standing before it. If $p_i\ge 2$, position $i$ issues the instruction
-``put a $1$ into position $i+p_i-1$''.
-\item If $a_i=0$, let $s_i=\bigl|\{j>i\mid a_j=0\}\bigr|$ be the number of
-$0$'s standing after it. If $s_i\ge 2$, position $i$ issues the instruction
-``put a $0$ into position $i-s_i+1$''.
+\item If the current $a_i=1$, let $p_i=\bigl|\{j<i\mid a_j=1\}\bigr|$ be the
+number of $1$'s standing before it. If $p_i\ge 2$, put a $1$ into position
+$i+p_i-1$.
+\item If the current $a_i=0$, let $s_i=\bigl|\{j>i\mid a_j=0\}\bigr|$ be the
+number of $0$'s standing after it. If $s_i\ge 2$, put a $0$ into position
+$i-s_i+1$.
 \end{itemize}
-In every other case no instruction is issued: if the number just counted is
-$0$ or $1$ (counting begins at the position itself, so the first place from
-$a_i$ is $a_i$ itself), or if the indicated position does not lie in
-$\{1,\ldots ,n\}$ --- there is no wrap-around and no overflow.
-
-\paragraph{Step 2: simultaneous execution.}
-All instructions are computed from the original sequence $K$ and are carried
-out at the same time. If position $t$ receives only ``$1$'' instructions, put
-$b_t=1$; if it receives only ``$0$'' instructions, put $b_t=0$; if it
-receives both kinds, or no instruction at all, put $b_t=a_t$.
+In every other case do nothing: if the number just counted is $0$ or $1$, or
+if the indicated position does not lie in $\{1,\ldots ,n\}$ --- there is no
+wrap-around and no overflow. The sequence obtained once position $n$ has been
+processed is $T(K)=(b_1,\ldots ,b_n)$.
 
 \paragraph{Question.}
-Prove that $T(K)$ always has a \emph{fixed point}: there exists an index
-$t\in\{1,\ldots ,n\}$ with $b_t=a_t$.
+Is it true that for every $n\ge 1$ and every sequence $K$, the sequence
+$T(K)$ always has a \emph{fixed point}, i.e. an index
+$t\in\{1,\ldots ,n\}$ with $b_t=a_t$ (where $a_t$ is the $t$-th entry of the
+\emph{original} $K$)? If so, prove it; if not, give a counterexample.
 
 20 points.
 
