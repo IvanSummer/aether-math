@@ -70,7 +70,7 @@
     </header>
 
     <div class="info">
-        <p style="margin-top: 12px;">时间：2026年9月1日 — 12月31日</p>
+        <p style="margin-top: 12px;">时间：2026年10月1日 00:00 — 2027年2月5日（除夕）23:59（北京时间）</p>
         <p style="margin-top: 8px;">提交：将解答以 PDF 形式发送至 <strong>aether_math@163.com</strong></p>
         <p style="margin-top: 8px;">可组队，但每队只能提交一份；充分理解题目后请勿使用计算机、计算器、符号运算软件、大模型或书籍。</p>
         <p style="margin-top: 8px;">赛题源文件：<a href="./contest1_zh.tex">contest1_zh.tex</a>（LaTeX，请用 XeLaTeX 编译）</p>
@@ -142,8 +142,8 @@
                 <p>设 $n\ge 1$，$K=(a_1,a_2,\ldots ,a_n)$ 是一个由 $0$ 和 $1$ 组成的有限序列。按下列规则由 $K$ 得到同样长度的新序列 $T(K)=(b_1,\ldots ,b_n)$。</p>
                 <p><strong>第一步：发出指令。</strong>每个位置 $i$ <strong>至多</strong>发出一条指令。</p>
                 <ul>
-                    <li>若 $a_i=1$，令 $p_i=\#\{j&lt;i\mid a_j=1\}$ 为它前面 $1$ 的个数。若 $p_i\ge 2$，则位置 $i$ 发出指令：“把第 $i+p_i-1$ 位改成 $1$”。</li>
-                    <li>若 $a_i=0$，令 $s_i=\#\{j&gt;i\mid a_j=0\}$ 为它后面 $0$ 的个数。若 $s_i\ge 2$，则位置 $i$ 发出指令：“把第 $i-s_i+1$ 位改成 $0$”。</li>
+                    <li>若 $a_i=1$，令 $p_i=\bigl|\{j&lt;i\mid a_j=1\}\bigr|$ 为它前面 $1$ 的个数。若 $p_i\ge 2$，则位置 $i$ 发出指令：“把第 $i+p_i-1$ 位改成 $1$”。</li>
+                    <li>若 $a_i=0$，令 $s_i=\bigl|\{j&gt;i\mid a_j=0\}\bigr|$ 为它后面 $0$ 的个数。若 $s_i\ge 2$，则位置 $i$ 发出指令：“把第 $i-s_i+1$ 位改成 $0$”。</li>
                 </ul>
                 <p>其余情形都不发出指令：数出的个数为 $0$ 或 $1$ 时不发（从自己数起，第一个就是自己），所指的位置不在 $\{1,\ldots ,n\}$ 内时也不发（不循环、不溢出）。</p>
                 <p><strong>第二步：同时执行。</strong>所有指令都由原序列 $K$ 算出，然后同时执行。若位置 $t$ 只收到“改成 $1$”的指令，则 $b_t=1$；只收到“改成 $0$”的指令，则 $b_t=0$；同时收到两种指令，或者没有收到任何指令，则 $b_t=a_t$。</p>
