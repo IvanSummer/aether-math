@@ -1,35 +1,47 @@
-% English version of the problem set of the 1st Aether Mathematics Open.
-\documentclass{article}
-\usepackage{graphicx}
-\usepackage{amsfonts}
-\usepackage{amssymb}
+% The 1st Aether Mathematics Open --- official problem set (English).
+% Compile with pdfLaTeX (or XeLaTeX); only standard packages are used.
+
+\documentclass[11pt,a4paper]{article}
+
 \usepackage{amsmath}
-\title{The 1st Aether Mathematics Open}
-\author{XIA Yihuan}
-\date{\today}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[margin=2.4cm]{geometry}
+
 \setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+\pagestyle{myheadings}
+\markboth{The 1st Aether Mathematics Open}{The 1st Aether Mathematics Open}
 
 \begin{document}
 
-\maketitle
+% -------------------------------------------------- title block
+\begin{center}
+{\LARGE\bfseries The 1st Aether Mathematics Open}\\[4pt]
+{\large Problems}\\[10pt]
+{\normalsize 1 October 2026, 00:00 \quad --- \quad 5 February 2027, 23:59 (UTC+8)}\\[4pt]
+{\small Five problems, 20 points each \quad $\cdot$ \quad 100 points in total}
+\end{center}
 
-\section{Introduction}
+\vspace{2pt}
+\hrule height 0.6pt
+\vspace{8pt}
 
-Welcome to the 1st Aether Mathematics Open!
-The contest will be held from 1 October 2026, 00:00 to 5 February 2027
-(Chinese New Year's Eve), 23:59 (Beijing time, UTC+8).
-It consists of 5 problems, each worth 20 points, for a total of 100 points.
+% -------------------------------------------------- conventions
+\section*{Conventions}
 
-\paragraph{Conventions.}
 Throughout this paper,
 $\mathbb{N}=\{0,1,2,3,\ldots\}$ --- in accordance with the convention used in
-Chinese textbooks, the natural numbers \emph{include} $0$, so $0\in\mathbb{N}$ ---
-and $\mathbb{Z}^{*}=\mathbb{Z}\setminus\{0\}$.
-Problem~3 uses the notation $K(S)$; contestants who have not studied algebra
+Chinese textbooks, the natural numbers \emph{include} $0$, so
+$0\in\mathbb{N}$ --- and $\mathbb{Z}^{*}=\mathbb{Z}\setminus\{0\}$.
+Problem 3 uses the notation $K(S)$; contestants who have not studied algebra
 should look up the term ``field extension''.
 
-\section{Problems}
-\subsection{Problem 1}
+% -------------------------------------------------- problems
+\section*{Problems}
+
+\subsection*{Problem 1 \quad\normalfont\normalsize (20 points)}
 
 Prove that for all $n,m\in\mathbb{N}\setminus\{0,1\}$ (that is, $n,m\ge 2$)
 there exist $x,y,z\in\mathbb{N}$ such that
@@ -38,24 +50,20 @@ $$x^n+y^n \equiv z^n \pmod{m}
 \qquad\text{and}\qquad
 z^n \not\equiv 0 \pmod{m}$$
 
-(Here $x,y,z$ are required to be pairwise distinct. Since $0\in\mathbb{N}$,
-each of them is allowed to be $0$.)
+(Here $x,y,z$ are required to be pairwise distinct. Recall
+$0\in\mathbb{N}$, so each of them is allowed to be $0$.)
 
-20 points.
-
-\subsection{Problem 2}
+\subsection*{Problem 2 \quad\normalfont\normalsize (20 points)}
 
 Let
 
 $$f(x)=\sum_{i=0}^n a_i x^i\ \Bigl(\sum_{j=1}^n a_j^2\neq 0\Bigr)\in \mathbb{Z}[x]$$
 
-Prove that for every constant $C\in \mathbb{R}$
+Prove that for every constant $C\in \mathbb {R}$
 
 $${\lvert\{u \in \mathbb{R}\mid f(u) = C\}\rvert\leq n}$$
 
-20 points.
-
-\subsection{Problem 3}
+\subsection*{Problem 3 \quad\normalfont\normalsize (20 points)}
 
 Let
 
@@ -72,33 +80,27 @@ and write $n=\deg f$ (throughout, $f$ is assumed to be non-constant). Here
 polynomials of smaller degree in $K[x]$; accordingly, reducibility is
 discussed only for non-constant polynomials.
 
-\subsubsection{(1)}
+\paragraph*{(1)\quad\normalfont (2 points)}
+Is it true that ($f(x)$ is irreducible over $\mathbb{R}$) $\implies$
+($f(x)$ is irreducible over $K_1$)? Answer the question and prove your answer.
 
-Is it true that ($f(x)$ is irreducible over $\mathbb{R}$) $\implies$ ($f(x)$
-irreducible over $K_1$)? Answer the question and prove your answer.
+\paragraph*{(2)\quad\normalfont (6 points)}
+Is it true that ($f(x)$ is irreducible over $K_1$) $\implies$
+($f(x)$ is irreducible over $\mathbb{R}$)? Answer the question and prove your
+answer.
 
-2 point.
-
-\subsubsection{(2)}
-
-Is it true that ($f(x)$ is irreducible over $K_1$) $\implies$ ($f(x)$
-irreducible over $\mathbb{R}$)? Answer the question and prove your answer.
-
-6 points.
-
-\subsubsection{(3)}
-
-Is it true that $(\exists M \in \mathbb{N})(\forall f(x) \in \mathbb{Z}[x])[(f(x)$
-irreducible over $K_M) \implies (f(x)$ irreducible over $\mathbb{R})]$?
-(Recall $0\in\mathbb{N}$, so $M=0$ is allowed and then $K_M=K_0=\mathbb{Q}$.)
+\paragraph*{(3)\quad\normalfont (6 points)}
+Is it true that
+$(\exists M \in \mathbb{N})(\forall f(x) \in \mathbb{Z}[x])[(f(x)$
+irreducible over $K_M) \implies (f(x)$ irreducible over
+$\mathbb{R})]$?
+(Recall $0\in\mathbb{N}$, so $M=0$ is allowed and then
+$K_M=K_0=\mathbb{Q}$.)
 
 Determine, in terms of the degree $n=\deg f$, for which $n$ such an
 implication can hold and for which it fails, and prove your answer.
 
-6 points.
-
-\subsubsection{(4)}
-
+\paragraph*{(4)\quad\normalfont (6 points)}
 Let
 
 $$K^*_0=\mathbb{Q}$$
@@ -111,22 +113,21 @@ Find an $f(x) \in \mathbb{Z}[x]$ that is irreducible over $K^*_M$ for every
 $M \in \mathbb{N}$ but is not irreducible over $\mathbb{R}$, and factor it
 over $\mathbb{R}$.
 
-6 points.
-
-\subsubsection*{Notes}
-
-(i) Every polynomial equation of degree $\le4$ is solvable by
+\paragraph*{Notes}
+\begin{itemize}
+\item[(i)] Every polynomial equation of degree $\le4$ is solvable by
 radicals (the quadratic formula, Cardano, and Ferrari).
 
-(ii) (Abel--Ruffini) There is no general formula in radicals for
-polynomial equations of degree $\ge5$; for example, no root
-of $x^5-4x+2$ can be expressed by radicals.
+\item[(ii)] (Abel--Ruffini) There is no general formula in radicals for
+polynomial equations of degree $\ge5$; for example, no root of
+$x^5-4x+2$ can be expressed by radicals.
 
-(iii) (casus irreducibilis) If an irreducible cubic over
-$\mathbb{Q}$ has three real roots, then none of its roots can
-be expressed by real radicals.
+\item[(iii)] (casus irreducibilis) If an irreducible cubic over
+$\mathbb{Q}$ has three real roots, then none of its roots can be expressed
+by real radicals.
+\end{itemize}
 
-\subsection{Problem 4}
+\subsection*{Problem 4 \quad\normalfont\normalsize (20 points)}
 
 The eight moves of an ordinary chess knight can be written as the set
 
@@ -138,27 +139,20 @@ $$K_a=\{\pm1\pm ai,\ \pm a \pm i\}\subset\mathbb{Z}[i]$$
 
 (Here $\pm1\pm ai$ stands for all four independent choices of the two signs.)
 
-\subsubsection{(1)}
-
-Prove that
+\paragraph*{(1)\quad\normalfont (6 points)}
+Prove:
 
 $$a \equiv 1 \pmod{2}\implies\sum_{i=1}^n k_i\neq 1,
 \quad\text{for every } n\ge 1 \text{ and all } k_1,\ldots,k_n\in K_a$$
 
-6 points.
-
-\subsubsection{(2)}
-
-Prove that
+\paragraph*{(2)\quad\normalfont (6 points)}
+Prove:
 
 $$a \equiv 0 \pmod{2}\implies
 \bigl(\forall z\in\mathbb{Z}[i]\bigr)\ \bigl(\exists n\ge 1,\ 
 k_1,\ldots,k_n\in K_a\bigr):\ \sum_{i=1}^n k_i=z$$
 
-6 points.
-
-\subsubsection{(3)}
-
+\paragraph*{(3)\quad\normalfont (8 points)}
 Let $m\ge 4$ be an integer and let
 
 $$B_m=\{a+bi\in\mathbb{Z}[i]\mid 0\le a,b<m\}$$
@@ -172,15 +166,13 @@ $$\sum_{i=1}^n k_i=z\qquad\text{and}\qquad
 that is, an ordinary knight starting at the corner $0$ can reach every
 square of the board by a path that never leaves the board.
 
-8 points.
-
-\subsection{Problem 5}
+\subsection*{Problem 5 \quad\normalfont\normalsize (20 points)}
 
 Let $n\ge 1$ and let $K=(a_1,a_2,\ldots ,a_n)$ be a finite sequence with
 $a_i\in\{0,1\}$. From $K$ we produce a new sequence
 $T(K)=(b_1,\ldots ,b_n)$ of the same length as follows.
 
-\paragraph{Rule.}
+\paragraph*{Rule.}
 Process the positions $i=1,2,\ldots ,n$ one after another. When it is the
 turn of position $i$, read the \emph{current} value of $a_i$, decide
 according to the clauses below whether to rewrite something, and if so carry
@@ -188,49 +180,67 @@ that rewrite out \emph{immediately}; only then move on to the next position.
 Thus later steps read values that earlier steps have already changed. In the
 formulas below, $a_j$ always denotes the current value at that moment.
 \begin{itemize}
-\item If the current $a_i=1$, let $p_i=\bigl|\{j<i\mid a_j=1\}\bigr|$ be the
-number of $1$'s standing before it. If $p_i\ge 2$, put a $1$ into position
-$i+p_i-1$.
-\item If the current $a_i=0$, let $s_i=\bigl|\{j>i\mid a_j=0\}\bigr|$ be the
-number of $0$'s standing after it. If $s_i\ge 2$, put a $0$ into position
-$i-s_i+1$.
+\item If the current $a_i=1$, let
+$p_i=\bigl|\{j<i\mid a_j=1\}\bigr|$ be the number of $1$'s standing before
+it. If $p_i\ge 2$, put a $1$ into position $i+p_i-1$.
+\item If the current $a_i=0$, let
+$s_i=\bigl|\{j>i\mid a_j=0\}\bigr|$ be the number of $0$'s standing after
+it. If $s_i\ge 2$, put a $0$ into position $i-s_i+1$.
 \end{itemize}
-In every other case do nothing: if the number just counted is $0$ or $1$, or
-if the indicated position does not lie in $\{1,\ldots ,n\}$ --- there is no
-wrap-around and no overflow. The sequence obtained once position $n$ has been
-processed is $T(K)=(b_1,\ldots ,b_n)$.
+In every other case do nothing: if the number just counted is $0$ or $1$
+(counting begins at the position itself, so the first place from $a_i$ is
+$a_i$ itself), or if the indicated position does not lie in
+$\{1,\ldots ,n\}$ --- there is no wrap-around and no overflow. The sequence
+obtained once position $n$ has been processed is
+$T(K)=(b_1,\ldots ,b_n)$.
 
-\paragraph{Question.}
+\paragraph*{Question.}
 Is it true that for every $n\ge 1$ and every sequence $K$, the sequence
-$T(K)$ always has a \emph{fixed point}, i.e. an index
-$t\in\{1,\ldots ,n\}$ with $b_t=a_t$ (where $a_t$ is the $t$-th entry of the
-\emph{original} $K$)? If so, prove it; if not, give a counterexample.
+$T(K)$ always has a \emph{fixed point}, that is, an index
+$t\in\{1,\ldots ,n\}$ with $b_t=a_t$ (where $a_t$ denotes the $t$-th entry of
+the \emph{original} sequence $K$)? If so, prove it; if not, give a
+counterexample.
 
-20 points.
+% -------------------------------------------------- rules
+\section*{Contest Rules}
 
-\section{Acknowledgements and Contest Notes}
+\begin{itemize}
+\item The contest runs from 00:00 on 1 October 2026 to 23:59 on 5 February
+2027 (Beijing time, UTC+8). Entries received outside this period will not be
+considered.
 
-The problems were proposed by XIA Yihuan, and test-solved by XIA Yihuan and
-some agents. We are grateful to Loveinterpretation for her indispensable
-contributions.
-Teamwork is permitted; however, a team may only submit one entry. Do not use
-computers, calculators, large language models, or books once you fully
-understand the problem statements. (Large language models and machines may
-submit entries as well, but they are not eligible for awards; their solutions
-may be appended to the reference solutions if they are better.)
+\item Submit your solutions as a single PDF file to
+\texttt{aether\_math@163.com}. Both handwritten and typeset solutions are
+accepted, provided that every formula is clearly legible and mathematically
+correct. Solutions written in plain text, without proper mathematical
+notation, will not be accepted.
 
-Everything that is necessary to solve these problems is written in the notes
-attached to the problems. We believe that all of you have at least completed
-middle school mathematics.
+\item Teamwork is permitted; however, a team may submit only one entry.
 
-Please submit your solutions as a PDF to aether\_math@163.com. Both
-handwritten and typeset mathematical formulas are accepted; solutions
-presented solely in plain text without proper notation will not be accepted.
-Ensure that all formulas are clearly legible and mathematically correct.
+\item Once you have fully understood the problem statements, do not use
+computers, calculators, symbolic computation software, large language models,
+or books.
 
-Appeals and suggestions may be sent to the same email address.
+\item Large language models and machines may submit entries as well, but they
+are not eligible for awards; should their solution be better than the
+reference solution, it will be appended to it.
+
+\item Everything needed to solve these problems is contained in the notes
+attached to them.
+
+\item Appeals and suggestions may be sent to the same email address.
+\end{itemize}
+
+% -------------------------------------------------- acknowledgements
+\section*{Acknowledgements}
+
+The problems were proposed by XIA Yihuan and test-solved by XIA Yihuan
+together with several agents. We are grateful to Loveinterpretation for her
+indispensable contributions.
 
 \vspace{1em}
-\noindent \textbf{Good luck!}
+\begin{center}
+\bfseries Good luck!
+\end{center}
 
 \end{document}
