@@ -70,7 +70,7 @@
     </header>
 
     <div class="info">
-        <p style="margin-top: 12px;">Period: September 1, 2026 &mdash; December 31, 2026</p>
+        <p style="margin-top: 12px;">Period: 1 October 2026, 00:00 &mdash; 5 February 2027 (Chinese New Year's Eve), 23:59 (UTC+8)</p>
         <p style="margin-top: 8px;">Submission: send your solutions as a PDF to <strong>aether_math@163.com</strong></p>
         <p style="margin-top: 8px;">Teamwork is permitted, but a team may submit only one entry. Once you fully understand the problems, do not use computers, calculators, symbolic computation software, large language models, or books.</p>
         <p style="margin-top: 8px;">Source file: <a href="./contest1_en.tex">contest1_en.tex</a> (LaTeX)</p>
@@ -142,8 +142,8 @@
                 <p>Let $n\ge1$ and let $K=(a_1,\ldots ,a_n)$ be a finite sequence with $a_i\in\{0,1\}$. Define $T(K)=(b_1,\ldots ,b_n)$ as follows.</p>
                 <p><strong>Step 1 (instructions).</strong> Each position $i$ issues <strong>at most one</strong> instruction.</p>
                 <ul>
-                    <li>If $a_i=1$, put $p_i=\#\{j&lt;i\mid a_j=1\}$, the number of $1$'s standing before it. If $p_i\ge2$, position $i$ issues the instruction &ldquo;put a $1$ into position $i+p_i-1$&rdquo;.</li>
-                    <li>If $a_i=0$, put $s_i=\#\{j&gt;i\mid a_j=0\}$, the number of $0$'s standing after it. If $s_i\ge2$, position $i$ issues the instruction &ldquo;put a $0$ into position $i-s_i+1$&rdquo;.</li>
+                    <li>If $a_i=1$, put $p_i=\bigl|\{j&lt;i\mid a_j=1\}\bigr|$, the number of $1$'s standing before it. If $p_i\ge2$, position $i$ issues the instruction &ldquo;put a $1$ into position $i+p_i-1$&rdquo;.</li>
+                    <li>If $a_i=0$, put $s_i=\bigl|\{j&gt;i\mid a_j=0\}\bigr|$, the number of $0$'s standing after it. If $s_i\ge2$, position $i$ issues the instruction &ldquo;put a $0$ into position $i-s_i+1$&rdquo;.</li>
                 </ul>
                 <p>In all other cases no instruction is issued: if the number counted is $0$ or $1$ (counting begins at the position itself, so the first place from $a_i$ is $a_i$ itself), or if the indicated position is outside $\{1,\ldots ,n\}$ (no wrap-around, no overflow).</p>
                 <p><strong>Step 2 (simultaneous execution).</strong> All instructions are computed from $K$ and carried out at the same time. If position $t$ receives only &ldquo;$1$&rdquo; instructions, put $b_t=1$; if only &ldquo;$0$&rdquo; instructions, put $b_t=0$; if it receives both kinds, or no instruction at all, put $b_t=a_t$.</p>
