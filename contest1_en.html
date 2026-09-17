@@ -80,7 +80,7 @@
     <div class="content">
 
         <div class="problem-text" style="margin-bottom: 30px;">
-            <p><strong>Conventions.</strong> Throughout, $\mathbb{N}=\{0,1,2,3,\ldots\}$ &mdash; following the convention used in Chinese textbooks, the natural numbers <em>include</em> $0$, so $0\in\mathbb{N}$ &mdash; and $\mathbb{Z}^{*}=\mathbb{Z}\setminus\{0\}$; for a subfield $K\subseteq\mathbb{C}$ and a set $S\subseteq\mathbb{C}$, $K(S)$ denotes the smallest subfield of $\mathbb{C}$ containing $K$ and $S$; a polynomial is called irreducible over $K$ only if it is non-constant.</p>
+            <p><strong>Conventions.</strong> Throughout, $\mathbb{N}=\{0,1,2,3,\ldots\}$ &mdash; following the convention used in Chinese textbooks, the natural numbers <em>include</em> $0$, so $0\in\mathbb{N}$ &mdash; and $\mathbb{Z}^{*}=\mathbb{Z}\setminus\{0\}$. Problem 3 uses the notation $K(S)$; contestants who have not studied algebra should look up the term &ldquo;field extension&rdquo;.</p>
         </div>
 
         <div class="problem">
@@ -103,7 +103,7 @@
         <div class="problem">
             <div class="problem-header">Problem 3 (20 points)</div>
             <div class="problem-text">
-                <p>Let $$K_0=\mathbb{Q},\qquad G_i=\{p\in\mathbb{C}\mid p^o=q^r,\ q\in K_i,\ r,o\in\mathbb{Z}^*\},\qquad K_j=K_{j-1}(G_{j-1}),$$ and let $f(x)\in\mathbb{Z}[x]$ be non-constant, $n=\deg f$.</p>
+                <p>Let $$K_0=\mathbb{Q},\qquad G_i=\{p\in\mathbb{C}\mid p^o=q^r,\ q\in K_i,\ r,o\in\mathbb{Z}^*\},\qquad K_j=K_{j-1}(G_{j-1}),$$ and let $f(x)\in\mathbb{Z}[x]$ be non-constant, $n=\deg f$. Here &ldquo;irreducible over $K$&rdquo; means that $f$ cannot be written as a product of two polynomials of smaller degree in $K[x]$; accordingly, reducibility is discussed only for non-constant polynomials.</p>
                 <ol>
                     <li>(2 points) Is it true that ($f$ irreducible over $\mathbb{R}$) $\implies$ ($f$ irreducible over $K_1$)? Answer the question and prove your answer.</li>
                     <li>(6 points) Is it true that ($f$ irreducible over $K_1$) $\implies$ ($f$ irreducible over $\mathbb{R}$)? Answer the question and prove your answer.</li>
@@ -113,9 +113,8 @@
                 <div class="notes">
                     <p><strong>Notes</strong></p>
                     <p>(i) Every polynomial equation of degree $\le4$ is solvable by radicals (quadratic formula, Cardano, Ferrari).</p>
-                    <p>(ii) (Abel&ndash;Ruffini) There is no general formula in radicals for equations of degree $\ge5$; e.g. no root of $x^5-4x+2$ is expressible by radicals. More generally, for every $n\ge5$, $x^n-x-1$ is irreducible over $\mathbb{Q}$ and remains so over every field obtained from $\mathbb{Q}$ by iterated adjunction of radicals.</p>
-                    <p>(iii) (Casus irreducibilis) If an irreducible cubic over $\mathbb{Q}$ has three real roots, then none of its roots can be expressed by real radicals, however deeply nested.</p>
-                    <p>(iv) If $g\in K_j[x]$ has degree $\le4$, then by (i) every root of $g$ lies in some $K_{j'}$ ($j'\ge j$). Hence if $f\in\mathbb{Z}[x]$ has a factor of degree $\le4$ over some $K_j$, then $f$ has a root expressible by radicals.</p>
+                    <p>(ii) (Abel&ndash;Ruffini) There is no general formula in radicals for equations of degree $\ge5$; e.g. no root of $x^5-4x+2$ is expressible by radicals.</p>
+                    <p>(iii) (Casus irreducibilis) If an irreducible cubic over $\mathbb{Q}$ has three real roots, then none of its roots can be expressed by real radicals.</p>
                 </div>
             </div>
         </div>
@@ -131,7 +130,7 @@
                 <ol>
                     <li>(6 points) Prove that if $a\equiv1\pmod2$, then $\sum_{i=1}^n k_i\neq 1$ for every $n\ge1$ and all $k_1,\ldots,k_n\in K_a$.<br>$$\sum_{i=1}^n k_i\neq 1$$</li>
                     <li>(6 points) Prove that if $a\equiv0\pmod2$, then for every $z\in\mathbb{Z}[i]$ there exist $n\ge1$ and $k_1,\ldots,k_n\in K_a$ with $$\sum_{i=1}^n k_i=z$$</li>
-                    <li>(8 points) Let $m\ge5$ be an integer and let $B_m=\{a+bi\in\mathbb{Z}[i]\mid 0\le a,b&lt;m\}$ be the $m\times m$ board. Prove that for every $z\in B_m$ there exist $n\ge1$ and $k_1,\ldots,k_n\in K_2$ such that $$\sum_{i=1}^n k_i=z\qquad\text{and}\qquad \sum_{i=1}^j k_i\in B_m\ \ (1\le j\le n),$$ i.e. an ordinary knight starting at the corner $0$ can reach every square by a path that never leaves the board.</li>
+                    <li>(8 points) Let $m\ge4$ be an integer and let $B_m=\{a+bi\in\mathbb{Z}[i]\mid 0\le a,b&lt;m\}$ be the $m\times m$ board. Prove that for every $z\in B_m$ there exist $n\ge1$ and $k_1,\ldots,k_n\in K_2$ such that $$\sum_{i=1}^n k_i=z\qquad\text{and}\qquad \sum_{i=1}^j k_i\in B_m\ \ (1\le j\le n),$$ i.e. an ordinary knight starting at the corner $0$ can reach every square by a path that never leaves the board.</li>
                 </ol>
             </div>
         </div>
@@ -140,14 +139,13 @@
             <div class="problem-header">Problem 5 (20 points)</div>
             <div class="problem-text">
                 <p>Let $n\ge1$ and let $K=(a_1,\ldots ,a_n)$ be a finite sequence with $a_i\in\{0,1\}$. Define $T(K)=(b_1,\ldots ,b_n)$ as follows.</p>
-                <p><strong>Step 1 (instructions).</strong> Each position $i$ issues <strong>at most one</strong> instruction.</p>
+                <p><strong>Rule.</strong> Process the positions $i=1,2,\ldots ,n$ one after another. When it is the turn of position $i$, read the <em>current</em> value of $a_i$, decide according to the clauses below whether to rewrite something, and if so carry that rewrite out <em>immediately</em>; only then move on to the next position. Thus later steps read values that earlier steps have already changed. In the formulas below, $a_j$ always denotes the current value at that moment.</p>
                 <ul>
-                    <li>If $a_i=1$, put $p_i=\bigl|\{j&lt;i\mid a_j=1\}\bigr|$, the number of $1$'s standing before it. If $p_i\ge2$, position $i$ issues the instruction &ldquo;put a $1$ into position $i+p_i-1$&rdquo;.</li>
-                    <li>If $a_i=0$, put $s_i=\bigl|\{j&gt;i\mid a_j=0\}\bigr|$, the number of $0$'s standing after it. If $s_i\ge2$, position $i$ issues the instruction &ldquo;put a $0$ into position $i-s_i+1$&rdquo;.</li>
+                    <li>If the current $a_i=1$, put $p_i=\bigl|\{j&lt;i\mid a_j=1\}\bigr|$, the number of $1$'s standing before it. If $p_i\ge2$, put a $1$ into position $i+p_i-1$.</li>
+                    <li>If the current $a_i=0$, put $s_i=\bigl|\{j&gt;i\mid a_j=0\}\bigr|$, the number of $0$'s standing after it. If $s_i\ge2$, put a $0$ into position $i-s_i+1$.</li>
                 </ul>
-                <p>In all other cases no instruction is issued: if the number counted is $0$ or $1$ (counting begins at the position itself, so the first place from $a_i$ is $a_i$ itself), or if the indicated position is outside $\{1,\ldots ,n\}$ (no wrap-around, no overflow).</p>
-                <p><strong>Step 2 (simultaneous execution).</strong> All instructions are computed from $K$ and carried out at the same time. If position $t$ receives only &ldquo;$1$&rdquo; instructions, put $b_t=1$; if only &ldquo;$0$&rdquo; instructions, put $b_t=0$; if it receives both kinds, or no instruction at all, put $b_t=a_t$.</p>
-                <p><strong>Question.</strong> Prove that $T(K)$ always has a <strong>fixed point</strong>: there exists $t\in\{1,\ldots ,n\}$ with $b_t=a_t$.</p>
+                <p>In every other case do nothing: if the number just counted is $0$ or $1$, or if the indicated position does not lie in $\{1,\ldots ,n\}$ (no wrap-around, no overflow). The sequence obtained once position $n$ has been processed is $T(K)=(b_1,\ldots ,b_n)$.</p>
+                <p><strong>Question.</strong> Is it true that for every $n\ge1$ and every sequence $K$, the sequence $T(K)$ always has a <strong>fixed point</strong>, i.e. an index $t\in\{1,\ldots ,n\}$ with $b_t=a_t$ (where $a_t$ is the $t$-th entry of the <em>original</em> $K$)? If so, prove it; if not, give a counterexample.</p>
             </div>
         </div>
 
